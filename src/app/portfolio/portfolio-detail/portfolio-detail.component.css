@@ -1,0 +1,40 @@
+section > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.creation {
+  display: flex;
+  padding: 30px 0;
+}
+
+img {
+  max-width: 500px;
+}
+
+.textes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 15px;
+  max-width: 400px;
+}
+
+.italic_bold {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.cats .languages {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+button {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

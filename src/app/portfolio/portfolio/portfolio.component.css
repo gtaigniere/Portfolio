@@ -1,0 +1,15 @@
+section > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.imgCard {
+  margin: 10px;
+}
+
+img {
+  height: 200px;
+}

@@ -1,0 +1,6 @@
+section > div {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px 0;
+  width: 100%;
+}

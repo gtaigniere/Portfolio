@@ -1,0 +1,9 @@
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  width: 300px;
+  border-right: 4px solid darkgray;
+  font-family: Poppins, sans-serif;
+}

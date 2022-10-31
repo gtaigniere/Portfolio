@@ -1,8 +1,8 @@
-.special-button {
+.special-btn-wrapper {
   box-sizing: border-box;
   padding: 7px 1px 8px 3px;
   position: relative;
-  background: -moz-linear-gradient(to bottom, var(--gray-dark), lightgray);
+  background: linear-gradient(to bottom, var(--gray-dark), lightgray);
   border: 1px outset gray;
   border-radius: 25px;
   border-bottom: none;
@@ -11,26 +11,40 @@
   text-align: center;
 }
 
+/*
+linear-gradient(0.44turn, pink, deeppink, black)
+linear-gradient(0.44turn, violet, darkviolet, black) // Clair
+linear-gradient(0.44turn, magenta, darkmagenta, black) // Moyen
+linear-gradient(0.44turn, mediumpurple, purple, black) // Foncé
+linear-gradient(0.44turn, red, darkred, black)
+linear-gradient(0.44turn, greenyellow, forestgreen, black)
+linear-gradient(0.44turn, green, darkgreen, black)
+linear-gradient(0.44turn, cyan, darkcyan, black)
+linear-gradient(0.44turn, #007BFF, #4169E1, black) // Primary
+linear-gradient(0.44turn, yellow, darkkhaki, black)
+linear-gradient(0.44turn, orange, darkorange, black)
+linear-gradient(0.44turn, lightgray, gray, black)
+ */
+
 .special-btn {
   box-sizing: border-box;
-  padding: 7px 14px 6px;
+  padding: 7px 14px 7px;
   position: relative;
   top: -1px;
   left: -2px;
   box-shadow: 2px 2px 2px black;
-  background: -moz-linear-gradient(-45deg, greenyellow, forestgreen, black); /* ACCUEIL */
-  /* background: linear-gradient(0.44turn, red, darkred, black); CONTACT */
   border-radius: 25px;
   color: white;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .special-btn:hover {
-  background: -moz-linear-gradient(-75deg, greenyellow, forestgreen, black);
+  background: linear-gradient(0.48turn, greenyellow, forestgreen, black);
 }
 
 .special-btn:active {
-  top: 0px;
+  top: 0;
   left: -1px;
   box-shadow: 1px 1px 1px black;
 }

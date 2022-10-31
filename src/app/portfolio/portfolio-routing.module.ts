@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { PortfolioComponent } from './portfolio/portfolio.component';
-import { PortfolioDetailComponent } from './portfolio-detail/portfolio-detail.component';
+import { PortfolioComponent } from './portfolio.component';
+import { CreationDetailComponent } from './components/creation-detail/creation-detail.component';
 
 const routes = [
   { path: 'creations', component: PortfolioComponent },
-  { path: 'creation/:id', component: PortfolioDetailComponent },
+  { path: 'creation/:id', component: CreationDetailComponent },
   { path: '', component: PortfolioComponent }
 ];
 

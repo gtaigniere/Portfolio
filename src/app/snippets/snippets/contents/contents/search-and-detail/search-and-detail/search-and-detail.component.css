@@ -1,7 +1,0 @@
-app-snippet-search, app-snippet-detail {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: flex-start;
-  width: 100%;
-}

@@ -1,0 +1,26 @@
+<app-snippet-detail-header class="snippet-search"></app-snippet-detail-header>
+
+<div class="section-snippet-detail" *ngIf="snippet; else aucunSnippet">
+
+  <h2>{{ snippet.title }}</h2>
+
+  <div class="snippet">
+    
+    <p class="creator">{{ snippet.creator }}</p>
+    
+    <p class="date">{{ snippet.date }}</p>
+
+    <pre class="code">{{ snippet.code }}</pre>
+
+    <p class="comment">{{ snippet.comment }}</p>
+
+    <p class="labels">
+      <!--    <app-snippet-label class="snippet-label" *ngFor="let label of snippet.labels"></app-snippet-label>-->
+    </p>
+
+  </div>
+</div>
+
+<ng-template #aucunSnippet>
+  <p>Aucun snippet à afficher</p>
+</ng-template>

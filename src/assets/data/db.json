@@ -282,49 +282,40 @@
     }
   ],
   "labels": [{
-    "id": 1,
     "name": "Script",
-    "color": "FF5733"
+    "color": "#FFFF00"
   },
   {
-    "id": 2,
     "name": "HTML",
-    "color": "C70039"
+    "color": "#C70039"
   },
   {
-    "id": 3,
     "name": "CSS",
-    "color": "1572B6"
+    "color": "#007ACC"
   },
   {
-    "id": 4,
     "name": "JavaScript",
-    "color": "F0DB4F"
+    "color": "#F0DB4F"
   },
   {
-    "id": 5,
     "name": "PHP",
-    "color": "787CB4"
+    "color": "#787CB4"
   },
   {
-    "id": 6,
     "name": "Java",
-    "color": "E11F21"
+    "color": "#E11F21"
   },
   {
-    "id": 7,
     "name": "SQL",
-    "color": "3198DA"
+    "color": "#3198DA"
   },
   {
-    "id": 8,
-    "name": "Git/Github",
-    "color": "F1502F"
+    "name": "Git",
+    "color": "#3E2C00"
   },
   {
-    "id": 9,
     "name": "Serveur",
-    "color": "00FF00"
+    "color": "#00FF00"
   }],
   "snippets": [{
     "id": 1,
@@ -335,9 +326,8 @@
     "comment": "VAR est toujours utilisé dans certains cas mais beaucoup moins depuis ES6 avec l'apparition de LET et CONST, c'est certains. Cependant c'est du au fait que LET et CONST ne sont pas toujours pratiques à cause de la portée (scope).",
     "file": "",
     "labels": [{
-      "id": 2,
       "name": "HTML",
-      "color": "C70039"
+      "color": "#C70039"
     }]
   },
   {
@@ -349,13 +339,12 @@
     "comment": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur.",
     "file": "",
     "labels": [{
-      "id": 3,
       "name": "CSS",
-      "color": "1572B6"
-    },{
-      "id": 6,
+      "color": "#007ACC"
+    },
+    {
       "name": "Java",
-      "color": "E11F21"
+      "color": "#E11F21"
     }]
   },
   {
@@ -367,17 +356,16 @@
     "comment": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
     "file": "",
     "labels": [{
-      "id": 5,
       "name": "PHP",
-      "color": "787CB4"
-    },{
-      "id": 7,
+      "color": "#787CB4"
+    },
+    {
       "name": "SQL",
-      "color": "3198DA"
-    },{
-      "id": 8,
-      "name": "Git/Github",
-      "color": "F1502F"
+      "color": "#3198DA"
+    },
+    {
+      "name": "Git",
+      "color": "#3E2C00"
     }]
   },
   {
@@ -389,17 +377,16 @@
     "comment": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
     "file": "",
     "labels": [{
-      "id": 1,
       "name": "Script",
-      "color": "FF5733"
-    },{
-      "id": 2,
+      "color": "#FFFF00"
+    },
+    {
       "name": "HTML",
-      "color": "C70039"
-    },{
-      "id": 3,
+      "color": "#C70039"
+    },
+    {
       "name": "CSS",
-      "color": "1572B6"
+      "color": "#007ACC"
     }]
   },
   {
@@ -411,13 +398,12 @@
     "comment": "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     "file": "",
     "labels": [{
-      "id": 4,
       "name": "JavaScript",
-      "color": "F0DB4F"
-    },{
-      "id": 8,
-      "name": "Git/Github",
-      "color": "F1502F"
+      "color": "#F0DB4F"
+    },
+    {
+      "name": "Git",
+      "color": "#3E2C00"
     }]
   },
   {
@@ -429,18 +415,16 @@
     "comment": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
     "file": "",
     "labels": [{
-      "id": 4,
       "name": "JavaScript",
-      "color": "F0DB4F"
-    },{
-      "id": 7,
-    "name": "SQL",
-    "color": "3198DA"
+      "color": "#F0DB4F"
     },
     {
-      "id": 8,
-      "name": "Git/Github",
-      "color": "F1502F"
+    "name": "SQL",
+    "color": "#3198DA"
+    },
+    {
+      "name": "Git",
+      "color": "#3E2C00"
     }]
   }]
 }

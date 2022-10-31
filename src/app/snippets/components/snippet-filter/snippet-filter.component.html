@@ -1,0 +1,60 @@
+<div class="filter-menu">
+
+  <div class="filter-header">
+    <h2>Filtres</h2>
+
+    <app-special-gradient-button class="special-btn" [callback]="goToSnippetAdd" [background]="buttonBackground" [text]="buttonText"></app-special-gradient-button>
+  </div>
+
+  <div class="filter-body">
+
+    <div class="filter-section">
+      <div class="section-body">
+        <ul class="menu">
+          <li class="show-all">
+            <span class="label-text">Tous les Snippets</span>
+            <span class="label-number">250</span>
+          </li>
+          <li class="favoris">
+            <span class="label-text">Favoris</span>
+            <span class="label-number">25</span>
+          </li>
+          <li class="unlabelled">
+            <span class="label-text">Sans étiquettes</span>
+            <span class="label-number">10</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="filter-section">
+      <div class="section-header">
+        <span>Labels</span>
+        <span class="add"><i class="material-icons">add_circle_outline</i></span>
+      </div>
+
+      <ul id="section-body">
+        <li class="label">
+          <span class="label-text">PHP</span>
+          <span class="label-number">50</span>
+        </li>
+        <li class="label">
+          <span class="label-text">JavaScript</span>
+          <span class="label-number">20</span>
+        </li>
+        <li class="label">
+          <span class="label-text">Git/Github</span>
+          <span class="label-number">5</span>
+        </li>
+        <li class="label">
+          <span class="label-text">Angular</span>
+          <span class="label-number">8</span>
+        </li>
+        <li class="label">
+          <span class="label-text">Spring</span>
+          <span class="label-number">2</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

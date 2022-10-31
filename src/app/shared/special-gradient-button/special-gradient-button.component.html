@@ -1,4 +1,4 @@
-<div class="special-button">
-  <a (click)="goAway()" class="special-btn">{{ buttonName }}</a>
-  <!-- <a class="special-btn" [routerLink]="buttonRouterLink">{{ buttonName }}</a> -->
+<div class="special-btn-wrapper">
+    <a #specialButton (click)="callback()" class="special-btn">{{ text }}</a>
+    <!-- <a class="special-btn" [routerLink]="buttonRouterLink">{{ buttonName }}</a> -->
 </div>

@@ -1,0 +1,23 @@
+.section-label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 3px;
+  margin-right: 3px;
+  width: 88px;
+  height: 26px;
+  background-color: whitesmoke;
+  border-width: 1px 1px 1px 0;
+  border-style: solid;
+  border-color: gray;
+  /*border-left: 6px solid purple;*/
+  border-radius: 3px;
+}
+
+.name {
+  margin: auto;
+  font-family: Poppins, sans-serif;
+  font-size: 0.7em;
+  color: gray;
+}
+

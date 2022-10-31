@@ -1,34 +1,29 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-special-gradient-button',
   templateUrl: 'special-gradient-button.component.html',
   styleUrls: ['special-gradient-button.component.css']
 })
-export class SpecialGradientButtonComponent implements OnInit {
+export class SpecialGradientButtonComponent implements OnInit, AfterViewInit {
 
-  // public gradientColor1: string = "";
-  // public gradientColor2: string = "";
-  // public gradientColor3: string = "";
-  // public textColor: string = "";
-  // public text: string = "";
+  @ViewChild('specialButton')
+  specialButton: ElementRef;
 
   @Input()
-  public buttonRouterLink: string = "['/accueil']";
-  
+  public callback: () => void; // Passage d'une fonction flêchée sous forme de paramètre (seulement possible si pas d’émission d’évent)
   @Input()
-  public buttonName: string = "Bouton";
+  public background: string = '';
+  @Input()
+  public text: string = '';
 
-  @Output()
-  public buttonClicked: EventEmitter<string> = new EventEmitter<string>();
-  
   constructor() { }
 
   ngOnInit() {
   }
 
-  public goAway() {
-    this.buttonClicked.emit("Bouton cliqué");
+  ngAfterViewInit() {
+    this.specialButton.nativeElement.style.background = this.background;
   }
 
 }

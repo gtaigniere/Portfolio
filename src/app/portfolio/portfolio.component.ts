@@ -61,7 +61,7 @@ export class PortfolioComponent implements OnInit {
     });
   }
 
-  // goToCreation(id: number) {
+  // goToCreation(id: string) {
   //   this.router.navigate(['/portfolio/creation', id]);
   // }
 

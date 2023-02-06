@@ -1,0 +1,32 @@
+.section-snippet-card {
+  padding: 8px 16px;
+  border-bottom: 1px solid gainsboro;
+  height: 130px;
+}
+
+h3 {
+  padding-top: 4px;
+  padding-bottom: 7px;
+  font-size: 0.95em;
+  color: dimgray;
+}
+
+.comment {
+  height: 44px;
+  font-size: 0.85em;
+  color: gray;
+  letter-spacing: -0.2px;
+  overflow: hidden;
+  /*text-overflow: ellipsis;*/
+}
+
+.labels {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 1px;
+  padding-right: 1px;
+  width: 284px;
+  height: 44px;
+  overflow: hidden;
+}

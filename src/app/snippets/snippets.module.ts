@@ -28,7 +28,6 @@ import { SnippetLabelComponent } from './components/snippet-label/snippet-label.
     SnippetLabelComponent
   ],
   exports: [
-    SnippetsComponent
   ],
   imports: [
     CommonModule,

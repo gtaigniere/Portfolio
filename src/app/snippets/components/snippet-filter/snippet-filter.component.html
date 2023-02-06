@@ -1,3 +1,4 @@
+<script src="../../../../../../moviedb/src/app/movie/components/movie-detail/movie-detail.component.ts"></script>
 <div class="filter-menu">
 
   <div class="filter-header">
@@ -10,18 +11,19 @@
 
     <div class="filter-section">
       <div class="section-body">
+
         <ul class="menu">
           <li class="show-all">
             <span class="label-text">Tous les Snippets</span>
-            <span class="label-number">250</span>
+            <span class="label-number">{{ total }}</span>
           </li>
           <li class="favoris">
             <span class="label-text">Favoris</span>
-            <span class="label-number">25</span>
+            <span class="label-number">{{ favorites }}</span>
           </li>
-          <li class="unlabelled">
+          <li class="unlabeled">
             <span class="label-text">Sans étiquettes</span>
-            <span class="label-number">10</span>
+            <span class="label-number">{{ unlabeled }}</span>
           </li>
         </ul>
       </div>
@@ -34,25 +36,9 @@
       </div>
 
       <ul id="section-body">
-        <li class="label">
-          <span class="label-text">PHP</span>
-          <span class="label-number">50</span>
-        </li>
-        <li class="label">
-          <span class="label-text">JavaScript</span>
-          <span class="label-number">20</span>
-        </li>
-        <li class="label">
-          <span class="label-text">Git/Github</span>
-          <span class="label-number">5</span>
-        </li>
-        <li class="label">
-          <span class="label-text">Angular</span>
-          <span class="label-number">8</span>
-        </li>
-        <li class="label">
-          <span class="label-text">Spring</span>
-          <span class="label-number">2</span>
+        <li [style]="'--label-color:' + label.color" class="label" *ngFor="let label of labels">
+          <span class="label-text">{{ label.name }}</span>
+<!--          <span class="label-number">{{ labelNumber }}</span>-->
         </li>
       </ul>
     </div>

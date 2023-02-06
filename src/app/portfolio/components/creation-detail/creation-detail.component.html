@@ -1,6 +1,6 @@
 <section>
 
-  <div class="creation-detail" *ngIf="creation; else aucuneCreation">
+  <div class="creation-detail" *ngIf="creation; else noCreation">
     <h2>{{ creation.title }}</h2>
 
     <div class="section-body">
@@ -15,7 +15,7 @@
         <div>
           <p class="creation-cats">
             <span class="italic-bold">Type(s)&nbsp;:&nbsp;</span>
-            <span>{{ creation.categorie }}</span>
+            <span>{{ creation.category }}</span>
           </p>
 
           <br>
@@ -31,9 +31,10 @@
     </div>
   </div>
   
-  <ng-template #aucuneCreation>
+  <ng-template #noCreation>
     <p>Aucune création à afficher</p>
   </ng-template>
 
   <app-special-gradient-button class="special-btn" [callback]="goToPortfolio" [background]="buttonBackground" [text]="buttonText"></app-special-gradient-button>
+
 </section>

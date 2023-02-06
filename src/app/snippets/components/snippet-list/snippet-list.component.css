@@ -1,9 +1,0 @@
-.snippet-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: flex-start;
-  width: 320px;
-  border-right: 4px solid darkgray;
-  font-family: Poppins, sans-serif;
-}

@@ -1,0 +1,16 @@
+.section-body {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.snippet-list {
+  border-bottom: 1px solid darkgray;
+}
+
+.snippet-detail {
+  border-right: 1px solid darkgray;
+  border-bottom: 1px solid darkgray;
+  border-top-right-radius: 5px;
+}

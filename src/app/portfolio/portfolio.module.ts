@@ -1,15 +1,15 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { PortfolioRoutingModule } from './portfolio-routing.module';
-import { SharedModule } from '../shared/shared.module';
+import {PortfolioRoutingModule} from './portfolio-routing.module';
+import {SharedModule} from '../shared/shared.module';
 
-import { LanguageService } from './services/language.service';
-import { CategoryService } from './services/category.service';
-import { CreationService } from 'src/app/portfolio/services/creation.service';
+import {LanguageAndToolService} from './services/languageAndTool.service';
+import {CategoryService} from './services/category.service';
+import {CreationService} from 'src/app/portfolio/services/creation.service';
 
-import { PortfolioComponent } from './portfolio.component';
-import { CreationDetailComponent } from './components/creation-detail/creation-detail.component';
+import {PortfolioComponent} from './portfolio.component';
+import {CreationDetailComponent} from './components/creation-detail/creation-detail.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { CreationDetailComponent } from './components/creation-detail/creation-d
   providers: [
     CreationService,
     CategoryService,
-    LanguageService
+    LanguageAndToolService
   ]
 })
 export class PortfolioModule { }

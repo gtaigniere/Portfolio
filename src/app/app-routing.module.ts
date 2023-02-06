@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
   { path: 'snippets', loadChildren: () => import('./snippets/snippets.module').then(module => module.SnippetsModule) },

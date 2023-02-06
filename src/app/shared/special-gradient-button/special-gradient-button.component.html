@@ -1,4 +1,5 @@
 <div class="special-btn-wrapper">
-    <a #specialButton (click)="callback()" class="special-btn">{{ text }}</a>
-    <!-- <a class="special-btn" [routerLink]="buttonRouterLink">{{ buttonName }}</a> -->
+
+    <a [style.background]="background" (click)="callback()" class="special-btn">{{ text }}</a>
+
 </div>

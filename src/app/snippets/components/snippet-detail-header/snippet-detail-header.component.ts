@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-snippet-detail-header',
   templateUrl: 'snippet-detail-header.component.html',
-  styleUrls: ['snippet-detail-header.component.css']
+  styleUrls: ['snippet-detail-header.component.scss']
 })
-export class SnippetDetailHeaderComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class SnippetDetailHeaderComponent {
 
 }

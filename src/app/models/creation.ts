@@ -1,12 +1,12 @@
-import { Category } from './category';
-import { Language } from "./language";
+import {Category} from './category';
+import {LanguageAndTool} from './languageAndTool';
 
 export interface Creation {
-  id: number;
+  id: string;
   title: string;
-  description: string;
-  year: number;
-  picture: string;
-  categories: Category[];
-  languages: Language[];
+  description?: string;
+  year?: number;
+  picture?: string;
+  categories?: Category[];
+  languages_tools?: LanguageAndTool[];
 }

@@ -1,20 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
-
-import { Label } from 'src/app/models/label';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-snippet-label',
   templateUrl: 'snippet-label.component.html',
-  styleUrls: ['snippet-label.component.css']
+  styleUrls: ['snippet-label.component.scss']
 })
-export class SnippetLabelComponent implements OnInit {
+export class SnippetLabelComponent {
 
   @Input()
-  public label: Label;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  label = {
+    id: 0,
+    name: '',
+    color: ''
+  };
 
 }

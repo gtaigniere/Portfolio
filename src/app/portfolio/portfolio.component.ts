@@ -1,35 +1,68 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
-import { CreationService } from 'src/app/portfolio/services/creation.service';
-
-import { Creation } from 'src/app/models/creation';
+import {CreationService} from 'src/app/portfolio/services/creation.service';
+import {Creation} from 'src/app/models/creation';
+import {CategoryService} from "./services/category.service";
+import {Category} from "../models/category";
+import {LanguageAndToolService} from "./services/languageAndTool.service";
+import {LanguageAndTool} from "../models/languageAndTool";
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: 'portfolio.component.html',
-  styleUrls: ['portfolio.component.css']
+  styleUrls: ['portfolio.component.scss']
 })
 export class PortfolioComponent implements OnInit {
 
-  public title: string = "Portfolio";
+  title: string = "Portfolio";
 
-  public PICTURE_URL: string = '../../assets/imgs/creations/';
-  public creations: Creation[];
-  public errMsg: string;
+  readonly PICTURE_URL: string = '../../assets/imgs/creations/';
+  creations: Creation[];
+  errMsg: string;
+  creation: Creation;
+  category?: Category;
+  categories?: Category[];
+  languageAndTool?: LanguageAndTool;
+  languagesAndTools?: LanguageAndTool[];
 
-  constructor(private creationService: CreationService,
-    private router: Router) { }
+  constructor(
+    private creationService: CreationService,
+    private categoryService: CategoryService,
+    private languageAndToolService: LanguageAndToolService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
-    this.creationService.getCreations().subscribe({
-      next: creations => this.creations = creations,
-      error: err => this.errMsg = err
+    this.creationService.getCreationById('n4tHjqPt8GjR3TFPd4Hb').subscribe({
+      next: creation => {
+        this.creation = creation;
+        this.creation.categories?.map(cat => {
+          this.categoryService.getCategoryById(cat.id).subscribe(
+            category => {
+              this.category = category;
+              console.log(category);
+              this.categories?.push(category);
+            }
+          )
+        });
+        console.log(this.categories);
+        this.creation.languages_tools?.map(langAndTool => {
+          this.languageAndToolService.getLanguageAndToolById(langAndTool.id).subscribe(
+            languageAndTool => {
+              this.languageAndTool = languageAndTool;
+              console.log(languageAndTool);
+              this.languagesAndTools?.push(languageAndTool);
+            }
+          )
+        });
+        console.log(this.languagesAndTools);
+      }
     });
   }
 
-  goToCreation(id: number) {
-    this.router.navigate(['/portfolio/creation', id]);
-  }
+  // goToCreation(id: number) {
+  //   this.router.navigate(['/portfolio/creation', id]);
+  // }
 
 }

@@ -1,9 +1,9 @@
 export interface CreationView {
-  id?: number;
+  id?: string;
   title?: string;
   description?: string;
   year?: number;
   picture?: string;
-  categorie?: string;
+  category?: string;
   language?: string;
 }

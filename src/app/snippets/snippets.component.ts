@@ -1,15 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-snippets',
   templateUrl: 'snippets.component.html',
-  styleUrls: ['snippets.component.css']
+  styleUrls: ['snippets.component.scss']
 })
-export class SnippetsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class SnippetsComponent {
 }

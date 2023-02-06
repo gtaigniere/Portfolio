@@ -311,20 +311,57 @@
   },
   {
     "name": "Git",
-    "color": "#3E2C00"
+    "color": "#2F4F4F"
   },
   {
     "name": "Serveur",
     "color": "#00FF00"
+  },
+  {
+    "name": "Angular",
+    "color": "#B3B3B3"
+  },
+  {
+    "name": "Spring",
+    "color": "#64BC44"
+  },
+  {
+    "name": "Laravel",
+    "color": "#F05340"
+  },
+  {
+    "name": "TypeScript",
+    "color": "#E0E68C"
+  },
+  {
+    "name": "MySQL",
+    "color": "#F29111"
+  },
+  {
+    "name": "Android",
+    "color": "#A4C639"
+  },
+  {
+    "name": "Oracle",
+    "color": "#F80102"
+  },
+  {
+    "name": "Linux",
+    "color": "#DD4814"
+  },
+  {
+    "name": "Windows",
+    "color": "#87CEFA"
   }],
   "snippets": [{
     "id": 1,
     "title": "VarLetConst",
     "creator": "Gilles",
     "date": "2020-02-07 09:46:52",
-    "code": "VAR est remplac&eacute; par CONST et LET depuis ES...",
+    "code": "VAR est remplacé par CONST et LET depuis ES...",
     "comment": "VAR est toujours utilisé dans certains cas mais beaucoup moins depuis ES6 avec l'apparition de LET et CONST, c'est certains. Cependant c'est du au fait que LET et CONST ne sont pas toujours pratiques à cause de la portée (scope).",
     "file": "",
+    "favorites": false,
     "labels": [{
       "name": "HTML",
       "color": "#C70039"
@@ -335,9 +372,10 @@
     "title": "Display",
     "creator": "Gilles",
     "date": "2020-02-06 22:15:08",
-    "code": "display:none; =&gt; ne sera pas affich&eacute;",
+    "code": "display:none; => ne sera pas affiché",
     "comment": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur.",
     "file": "",
+    "favorites": false,
     "labels": [{
       "name": "CSS",
       "color": "#007ACC"
@@ -355,6 +393,7 @@
     "code": "HTMLSPECIALCHAR($_GET['variable'])",
     "comment": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
     "file": "",
+    "favorites": false,
     "labels": [{
       "name": "PHP",
       "color": "#787CB4"
@@ -365,7 +404,7 @@
     },
     {
       "name": "Git",
-      "color": "#3E2C00"
+      "color": "#2F4F4F"
     }]
   },
   {
@@ -376,6 +415,7 @@
     "code": "<?php debugueur ?>",
     "comment": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
     "file": "",
+    "favorites": false,
     "labels": [{
       "name": "Script",
       "color": "#FFFF00"
@@ -397,13 +437,14 @@
     "code": "mail('label@fournisseur', 'Sujet', $message, $header);",
     "comment": "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     "file": "",
+    "favorites": false,
     "labels": [{
       "name": "JavaScript",
       "color": "#F0DB4F"
     },
     {
       "name": "Git",
-      "color": "#3E2C00"
+      "color": "#2F4F4F"
     }]
   },
   {
@@ -414,6 +455,7 @@
     "code": "var $add = \"Ajout d'un snippet\";console.log($add...",
     "comment": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
     "file": "",
+    "favorites": false,
     "labels": [{
       "name": "JavaScript",
       "color": "#F0DB4F"
@@ -424,7 +466,7 @@
     },
     {
       "name": "Git",
-      "color": "#3E2C00"
+      "color": "#2F4F4F"
     }]
   }]
 }

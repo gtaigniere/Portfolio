@@ -1,30 +1,30 @@
 <section>
 
-  <div class="creation-detail" *ngIf="creation; else noCreation">
-    <h2>{{ creation.title }}</h2>
+  <div class="creation-detail" *ngIf="creationView; else noCreation">
+    <h2>{{ creationView.title }}</h2>
 
     <div class="section-body">
       <div>
-        <img src="{{ PICTURE_URL + creation.picture }}" alt="{{ creation.picture }}">
+        <img src="{{ PICTURE_URL + creationView.picture }}" alt="{{ creationView.picture }}">
       </div>
 
       <div class="creation-texts">
-        <p>{{ creation.description }}</p>
+        <p>{{ creationView.description }}</p>
 
         <br>
         <div>
           <p class="creation-cats">
             <span class="italic-bold">Type(s)&nbsp;:&nbsp;</span>
-            <span>{{ creation.category }}</span>
+            <span>{{ creationView.categories }}</span>
           </p>
 
           <br>
-          <p><span class="italic-bold">Année :&nbsp;</span>{{ creation.year }}</p>
+          <p><span class="italic-bold">Année :&nbsp;</span>{{ creationView.year }}</p>
           <br>
 
           <p class="creation-languages">
             <span class="italic-bold">Avec&nbsp;:&nbsp;</span>
-            <span>{{ creation.language }}</span>
+            <span>{{ creationView.languagesAndTools }}</span>
           </p>
         </div>
       </div>

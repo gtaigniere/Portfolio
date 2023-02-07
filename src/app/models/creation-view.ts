@@ -4,6 +4,6 @@ export interface CreationView {
   description?: string;
   year?: number;
   picture?: string;
-  category?: string;
-  language?: string;
+  categories?: string;
+  languagesAndTools?: string;
 }

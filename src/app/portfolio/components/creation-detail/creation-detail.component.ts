@@ -38,8 +38,14 @@ export class CreationDetailComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(params => {
-      const id: string|null = params.get('id');
+      const creation: Creation = params.get('creation');
+      // const id: string|null = params.get('id');
 
+      if (creation) {
+        console.table(creation);
+      }
+
+      /*
       if (id) {
         this.creationService.getCreationById(id).subscribe(
           creation => {
@@ -72,6 +78,7 @@ export class CreationDetailComponent implements OnInit {
           }
         );
       }
+      */
     });
   }
 

@@ -27,8 +27,8 @@ export class PortfolioComponent implements OnInit {
     );
   }
 
-  goToCreation(id: string) {
-    this.router.navigate(['/portfolio/creation', id]);
+  goToCreation(creation: Creation) {
+    this.router.navigate(['/portfolio/creation', creation]);
   }
 
 }

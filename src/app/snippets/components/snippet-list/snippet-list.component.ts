@@ -1,6 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-
-import {SnippetService} from '../../services/snippet.service';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 import {Snippet} from '../../../models/snippet';
 
@@ -11,18 +9,21 @@ import {Snippet} from '../../../models/snippet';
 })
 export class SnippetListComponent implements OnInit {
 
-  snippets: Snippet[];
+  @Input()
+  snippets: Snippet[] = [];
   errMsg: string;
 
-  constructor(
-    private snippetService: SnippetService
-  ) { }
+  @Output()
+  snippetClicked: EventEmitter<string> = new EventEmitter<string>();
 
-  ngOnInit(): void {
-    this.snippetService.getSnippets().subscribe({
-      next: snippets => this.snippets = snippets,
-      error: err => this.errMsg = err
-    });
+  constructor(
+  ) {}
+
+  ngOnInit() {
+  }
+
+  sendSnippetId(id: string) {
+    this.snippetClicked.emit(id);
   }
 
 }

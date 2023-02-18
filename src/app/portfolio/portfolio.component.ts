@@ -19,7 +19,7 @@ export class PortfolioComponent implements OnInit {
   constructor(
     private creationService: CreationService,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.creationService.getCreations().subscribe(
@@ -27,8 +27,8 @@ export class PortfolioComponent implements OnInit {
     );
   }
 
-  goToCreation(creation: Creation) {
-    this.router.navigate(['/portfolio/creation', creation]);
+  goToCreation(id: string) {
+    this.router.navigate(['/portfolio/creation', id]);
   }
 
 }

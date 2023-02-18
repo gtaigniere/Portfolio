@@ -34,18 +34,12 @@ export class CreationDetailComponent implements OnInit {
     private languageAndToolService: LanguageAndToolService,
     private activatedRoute: ActivatedRoute,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(params => {
-      const creation: Creation = params.get('creation');
-      // const id: string|null = params.get('id');
+      const id: string = params.get('id') as string;
 
-      if (creation) {
-        console.table(creation);
-      }
-
-      /*
       if (id) {
         this.creationService.getCreationById(id).subscribe(
           creation => {
@@ -78,7 +72,6 @@ export class CreationDetailComponent implements OnInit {
           }
         );
       }
-      */
     });
   }
 

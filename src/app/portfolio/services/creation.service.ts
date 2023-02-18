@@ -15,13 +15,13 @@ export class CreationService {
   ) { }
 
   getCreations(): Observable<Creation[]> {
-    const snippetsRef = collection(this.firestore, 'creations');
-    return collectionData(snippetsRef, {idField: 'id'}) as Observable<Creation[]>;
+    const creationRef = collection(this.firestore, 'creations');
+    return collectionData(creationRef, {idField: 'id'}) as Observable<Creation[]>;
   }
 
   getCreationById(id: string): Observable<Creation> {
-    const snippetRef = doc(this.firestore, `creations/${id}`);
-    return docData(snippetRef, {idField: 'id'}) as Observable<Creation>;
+    const creationRef = doc(this.firestore, `creations/${id}`);
+    return docData(creationRef, {idField: 'id'}) as Observable<Creation>;
   }
 
   addCreation(creation: Creation) {

@@ -9,7 +9,7 @@ export class SnippetLabelComponent {
 
   @Input()
   label = {
-    id: 0,
+    id: '',
     name: '',
     color: ''
   };

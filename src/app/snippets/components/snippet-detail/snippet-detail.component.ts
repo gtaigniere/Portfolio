@@ -1,10 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-
-import {SnippetService} from 'src/app/snippets/services/snippet.service';
-
 import {Snippet} from 'src/app/models/snippet';
-import {Label} from 'src/app/models/label';
+import {LabelService} from "../../services/label.service";
 
 @Component({
   selector: 'app-snippet-detail',
@@ -17,30 +13,16 @@ export class SnippetDetailComponent implements OnInit {
   snippet: Snippet;
   errMsg: string;
 
-  labels: Label[];
+  // labels: Label[];
 
-  snippetId: number;
+  snippetId: string;
 
   constructor(
-    private snippetService: SnippetService,
-    private route: ActivatedRoute
-  ) { }
-    
-  ngOnInit(): void {
-    console.log(this.snippetService.getSnippets());
+    private labelService: LabelService
+  ) {}
 
-    // if (this.snippetId) {
-    //   this.snippetService.getSnippetById(this.snippetId).subscribe({
-    //     next: snippet => this.snippet = snippet,
-    //     error: err => this.errMsg = err
-    //   });
-    // } else {
-    //   this.snippetId = Math.floor(Math.random() * (7 + 1));
-    //   this.snippetService.getSnippetById(this.snippetId).subscribe({
-    //     next: snippet => this.snippet = snippet,
-    //     error: err => this.errMsg = err
-    //   });
-    // }
+  ngOnInit() {
+
   }
 
 }

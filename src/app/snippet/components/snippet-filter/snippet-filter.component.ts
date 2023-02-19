@@ -35,12 +35,10 @@ export class SnippetFilterComponent implements OnInit {
   ngOnInit() {
     this.snippetService.getSnippets().subscribe({
       next: snippets => this.snippets = snippets,
-      error: err => this.errMsg = err
     });
 
     this.labelService.getLabels().subscribe({
       next: labels => this.labels = labels,
-      error: err => this.errMsg = err
     });
 
     this.total = this.snippets.length;

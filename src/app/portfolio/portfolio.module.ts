@@ -8,16 +8,16 @@ import {LanguageAndToolService} from './services/languageAndTool.service';
 import {CategoryService} from './services/category.service';
 import {CreationService} from 'src/app/portfolio/services/creation.service';
 
-import {PortfolioComponent} from './portfolio.component';
-import {CreationDetailComponent} from './components/creation-detail/creation-detail.component';
+import {CreationListComponent} from './pages/creation-list/creation-list.component';
+import {CreationDetailComponent} from './pages/creation-detail/creation-detail.component';
 
 @NgModule({
   declarations: [
-    PortfolioComponent,
+    CreationListComponent,
     CreationDetailComponent
   ],
   exports: [
-    PortfolioComponent,
+    CreationListComponent,
     CreationDetailComponent
   ],
   imports: [

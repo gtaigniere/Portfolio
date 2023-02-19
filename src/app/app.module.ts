@@ -13,7 +13,7 @@ import {SharedModule} from './shared/shared.module';
 
 import {WelcomeModule} from './welcome/welcome.module';
 import {PortfolioModule} from './portfolio/portfolio.module';
-import {SnippetsModule} from './snippets/snippets.module';
+import {SnippetModule} from './snippet/snippet.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import {SnippetsModule} from './snippets/snippets.module';
     PartialsModule,
     WelcomeModule,
     PortfolioModule,
-    SnippetsModule,
+    SnippetModule,
     SharedModule
   ],
   providers: [],

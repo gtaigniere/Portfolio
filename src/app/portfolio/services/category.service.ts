@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {addDoc, collection, collectionData, deleteDoc, doc, docData, Firestore, setDoc} from "@angular/fire/firestore";
 
-import {Category} from "../../models/category";
+import {Category} from "../models/category";
 
 @Injectable() // Service injecté au niveau du module "Portfolio"
 export class CategoryService {

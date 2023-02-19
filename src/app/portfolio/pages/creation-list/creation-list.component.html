@@ -1,0 +1,15 @@
+<section>
+
+  <h1>{{ title }}</h1>
+
+  <div class="section-body">
+
+    <div (click)="goToCreation(creation.id)" *ngFor="let creation of creations" class="card">
+
+      <img src="{{ PICTURE_URL + creation.picture }}" alt="{{ creation.picture }}">
+
+    </div>
+
+  </div>
+
+</section>

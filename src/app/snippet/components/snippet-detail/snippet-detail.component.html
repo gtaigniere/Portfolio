@@ -1,0 +1,32 @@
+<div class="section-snippet-detail" *ngIf="snippet; else aucunSnippet">
+
+  <div class="section-header">
+    <div class="section-title">
+      <span class="star"><i class="material-icons">star</i></span>
+      <h2>{{ snippet.title }}</h2>
+      <span class="edit"><i class="material-icons">edit</i></span>
+      <span class="delete"><i class="material-icons">delete</i></span>
+    </div>
+
+    <div class="section-creator-and-labels">
+      <div class="creator-and-date">
+        <p class="creator">Créé par {{ snippet.creator }}</p>
+        <p class="date">{{ snippet.date }}</p>
+      </div>
+
+      <div class="labels">
+<!--        <app-snippet-label class="snippet-label" *ngFor="let label of snippet.labels" [label]="label"></app-snippet-label>-->
+      </div>
+    </div>
+  </div>
+
+  <div class="section-body">
+    <pre class="code">{{ snippet.code }}</pre>
+    <p class="comment">{{ snippet.comment }}</p>
+  </div>
+
+</div>
+
+<ng-template #aucunSnippet>
+  <p>Aucun snippet à afficher</p>
+</ng-template>

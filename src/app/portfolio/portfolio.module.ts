@@ -10,6 +10,7 @@ import {CreationService} from 'src/app/portfolio/services/creation.service';
 
 import {CreationListComponent} from './pages/creation-list/creation-list.component';
 import {CreationDetailComponent} from './pages/creation-detail/creation-detail.component';
+import {CreationResolver} from "./resolvers/creation.resolver";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {CreationDetailComponent} from './pages/creation-detail/creation-detail.c
   providers: [
     CreationService,
     CategoryService,
-    LanguageAndToolService
+    LanguageAndToolService,
+    CreationResolver
   ]
 })
 export class PortfolioModule { }

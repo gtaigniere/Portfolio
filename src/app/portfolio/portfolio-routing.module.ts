@@ -4,10 +4,11 @@ import {RouterModule} from '@angular/router';
 
 import {CreationListComponent} from './pages/creation-list/creation-list.component';
 import {CreationDetailComponent} from './pages/creation-detail/creation-detail.component';
+import {CreationResolver} from "./resolvers/creation.resolver";
 
 const routes = [
   { path: 'creations', component: CreationListComponent },
-  { path: 'creation/:id', component: CreationDetailComponent },
+  { path: 'creation/:id', component: CreationDetailComponent, resolve: { creation: CreationResolver }},
   { path: '', component: CreationListComponent }
 ];
 

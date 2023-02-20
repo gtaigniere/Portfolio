@@ -37,42 +37,55 @@ export class CreationDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.activatedRoute.paramMap.subscribe(params => {
-      const id: string = params.get('id') as string;
+    this.creation = this.activatedRoute.snapshot.data['creation'];
+    console.table(this.creation);
 
-      if (id) {
-        this.creationService.getCreationById(id).subscribe(
-          creation => {
-            this.creation = creation;
-            this.creation.categories?.map(cat => {
-              this.categoryService.getCategoryById(cat.id).subscribe(
-                category => {
-                  this.category = category;
-                  this.categories?.push(category);
-                }
-              )
-            });
-            this.creation.languages_tools?.map(langAndTool => {
-              this.languageAndToolService.getLanguageAndToolById(langAndTool.id).subscribe(
-                languageAndTool => {
-                  this.languageAndTool = languageAndTool;
-                  this.languagesAndTools?.push(languageAndTool);
-                }
-              )
-            });
-            this.creationView = {
-              id: this.creation.id,
-              title: this.creation.title,
-              description: this.creation.description,
-              year: this.creation.year,
-              picture: this.creation.picture,
-              categories: this.categories.map(categories => categories.name).join(' / '),
-              languagesAndTools: this.languagesAndTools.map(languagesAndTools => languagesAndTools.name).join(', ')
-            }
-          }
-        );
-      }
-    });
+    this.creationView = {
+      id: this.creation.id,
+      title: this.creation.title,
+      description: this.creation.description,
+      year: this.creation.year,
+      picture: this.creation.picture,
+      // categories: this.categories.map(categories => categories.name).join(' / '),
+      // languagesAndTools: this.languagesAndTools.map(languagesAndTools => languagesAndTools.name).join(', ')
+    }
+
+    // this.activatedRoute.paramMap.subscribe(params => {
+    //   const id: string = params.get('id') as string;
+
+      // if (id) {
+      //   this.creationService.getCreationById(id).subscribe(
+      //     creation => {
+      //       this.creation = creation;
+      //       this.creation.categories?.map(cat => {
+      //         this.categoryService.getCategoryById(cat.id).subscribe(
+      //           category => {
+      //             this.category = category;
+      //             this.categories?.push(category);
+      //           }
+      //         )
+      //       });
+      //       this.creation.languages_tools?.map(langAndTool => {
+      //         this.languageAndToolService.getLanguageAndToolById(langAndTool.id).subscribe(
+      //           languageAndTool => {
+      //             this.languageAndTool = languageAndTool;
+      //             this.languagesAndTools?.push(languageAndTool);
+      //           }
+      //         )
+      //       });
+      //       this.creationView = {
+      //         id: this.creation.id,
+      //         title: this.creation.title,
+      //         description: this.creation.description,
+      //         year: this.creation.year,
+      //         picture: this.creation.picture,
+      //         categories: this.categories.map(categories => categories.name).join(' / '),
+      //         languagesAndTools: this.languagesAndTools.map(languagesAndTools => languagesAndTools.name).join(', ')
+      //       }
+          // }
+        // );
+      // }
+    // });
   }
 
   public goToPortfolio = () => {

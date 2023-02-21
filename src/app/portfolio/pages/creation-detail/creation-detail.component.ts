@@ -38,7 +38,7 @@ export class CreationDetailComponent implements OnInit {
 
   ngOnInit() {
     this.creation = this.activatedRoute.snapshot.data['creation'];
-    console.table(this.creation);
+    // console.table(this.creation);
 
     this.creationView = {
       id: this.creation.id,

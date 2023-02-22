@@ -14,6 +14,8 @@ import {SharedModule} from './shared/shared.module';
 import {WelcomeModule} from './welcome/welcome.module';
 import {PortfolioModule} from './portfolio/portfolio.module';
 import {SnippetModule} from './snippet/snippet.module';
+import {AngularFireModule} from "@angular/fire/compat";
+import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 
 @NgModule({
   declarations: [
@@ -22,8 +24,8 @@ import {SnippetModule} from './snippet/snippet.module';
   imports: [
     AppRoutingModule,
     BrowserModule,
-    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
-    provideFirestore(() => getFirestore()),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
     HttpClientModule,
     PartialsModule,
     WelcomeModule,

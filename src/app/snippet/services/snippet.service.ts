@@ -1,19 +1,25 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {addDoc, collection, collectionData, deleteDoc, doc, docData, Firestore, setDoc} from "@angular/fire/firestore";
 
 import {Snippet} from '../models/snippet';
+import {AngularFireDatabase} from "@angular/fire/compat/database";
 
 @Injectable() // Service injecté au niveau du module "Snippet"
 export class SnippetService {
-  private _url: string = "http://localhost:3000/";
 
   constructor(
-    private firestore: Firestore,
-    private http: HttpClient
+    private db: AngularFireDatabase
   ) { }
 
+  getSnippets(): Observable<Snippet[]> {
+    return this.db.list('snippets').valueChanges() as Observable<Snippet[]>;
+  }
+
+  getSnippetById(id: string): Observable<Snippet> {
+    return this.db.object<Snippet>(`snippets/${id}`).valueChanges() as Observable<Snippet>;
+  }
+
+  /*
   getSnippets(): Observable<Snippet[]> {
     const snippetsRef = collection(this.firestore, 'snippets');
     return collectionData(snippetsRef, {idField: 'id'}) as Observable<Snippet[]>;
@@ -46,7 +52,6 @@ export class SnippetService {
   // getSnippetsByLabel(labelId: string): Snippet[] {
   // }
 
-  /*
   getSnippets(): Observable<Snippet[]> {
     return this.http.get<Snippet[]>(this._url + 'snippets').pipe(
       tap((response) => this.log(response)),

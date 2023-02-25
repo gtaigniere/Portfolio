@@ -1,8 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-
-import {SnippetService} from '../../services/snippet.service';
-import {LabelService} from '../../services/label.service';
+import {Component, Input, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 import {Snippet} from '../../models/snippet';
 import {Label} from '../../models/label';
@@ -17,39 +14,27 @@ export class SnippetFilterComponent implements OnInit {
   buttonBackground = 'linear-gradient(0.44turn, mediumpurple, purple, black)';
   buttonText = 'Nouveau Snippet';
 
-  snippets: Snippet[];
-  labels: Label[];
-  errMsg: string;
-  total: number;
-  favorites: number;
-  unlabeled: number;
+  @Input()
+  snippets: Snippet[] = [];
+  @Input()
+  labels: Label[] = [];
+  total: number = 0;
+  favorites: number = 0;
+  unlabeled: number = 0;
   snippetNumberByLabel: number[];
 
   constructor(
-    private snippetService: SnippetService,
-    private labelService: LabelService,
-    private route: ActivatedRoute,
     private router: Router
   ) { }
 
   ngOnInit() {
-    this.snippetService.getSnippets().subscribe({
-      next: snippets => this.snippets = snippets,
-      error: err => this.errMsg = err
-    });
-
-    this.labelService.getLabels().subscribe({
-      next: labels => this.labels = labels,
-      error: err => this.errMsg = err
-    });
-
     this.total = this.snippets.length;
     for(let label of this.labels) {
       for(let snippet of this.snippets) {
         if (snippet.favorites) {
           this.favorites++;
         }
-        if (snippet.labels?.length == 0) {
+        if (snippet.labels?.length === 0) {
           this.unlabeled++;
         } else if (snippet.labels?.includes(label)) {
           // this.snippetNumberByLabel[snippet.id]++;
@@ -61,6 +46,6 @@ export class SnippetFilterComponent implements OnInit {
   }
 
   public goToSnippetAdd = () => {
-    this.router.navigate(['/snippet/add']);
+    this.router.navigate(['/snippets/add']);
   }
 }

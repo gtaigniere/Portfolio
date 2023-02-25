@@ -8,7 +8,7 @@ import {CreationResolver} from "./resolvers/creation.resolver";
 
 const routes = [
   { path: 'creations', component: CreationListComponent },
-  { path: 'creation/:id', component: CreationDetailComponent, resolve: { creation: CreationResolver }},
+  { path: 'creations/:id', component: CreationDetailComponent, resolve: { creation: CreationResolver }},
   { path: '', component: CreationListComponent }
 ];
 

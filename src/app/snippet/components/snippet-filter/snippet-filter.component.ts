@@ -1,8 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-
-import {SnippetService} from '../../services/snippet.service';
-import {LabelService} from '../../services/label.service';
+import {Component, Input, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 import {Snippet} from '../../models/snippet';
 import {Label} from '../../models/label';
@@ -17,30 +14,20 @@ export class SnippetFilterComponent implements OnInit {
   buttonBackground = 'linear-gradient(0.44turn, mediumpurple, purple, black)';
   buttonText = 'Nouveau Snippet';
 
-  snippets: Snippet[];
-  labels: Label[];
-  errMsg: string;
-  total: number;
-  favorites: number;
-  unlabeled: number;
+  @Input()
+  snippets: Snippet[] = [];
+  @Input()
+  labels: Label[] = [];
+  total = 0;
+  favorites = 0;
+  unlabeled = 0;
   snippetNumberByLabel: number[];
 
   constructor(
-    private snippetService: SnippetService,
-    private labelService: LabelService,
-    private route: ActivatedRoute,
     private router: Router
   ) { }
 
   ngOnInit() {
-    this.snippetService.getSnippets().subscribe({
-      next: snippets => this.snippets = snippets,
-    });
-
-    this.labelService.getLabels().subscribe({
-      next: labels => this.labels = labels,
-    });
-
     this.total = this.snippets.length;
     for(let label of this.labels) {
       for(let snippet of this.snippets) {

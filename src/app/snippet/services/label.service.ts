@@ -1,19 +1,25 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {addDoc, collection, collectionData, deleteDoc, doc, docData, Firestore, setDoc} from "@angular/fire/firestore";
 
 import {Label} from '../models/label';
+import {AngularFireDatabase} from "@angular/fire/compat/database";
 
 @Injectable() // Service injecté au niveau du module "Snippet"
 export class LabelService {
-  private _url: string = "http://localhost:3000/";
 
   constructor(
-    private firestore: Firestore,
-    private http: HttpClient
+    private db: AngularFireDatabase
   ) { }
 
+  getLabels(): Observable<Label[]> {
+    return this.db.list('labels').valueChanges() as Observable<Label[]>;
+  }
+
+  getLabelById(id: string): Observable<Label> {
+    return this.db.object<Label>(`labels/${id}`).valueChanges() as Observable<Label>;
+  }
+
+  /*
   getLabels(): Observable<Label[]> {
     const labelsRef = collection(this.firestore, 'labels');
     return collectionData(labelsRef, {idField: 'id'}) as Observable<Label[]>;
@@ -47,9 +53,7 @@ export class LabelService {
       catchError((error) => this.handleError(error, []))
     );
   }
-  */
 
-  /*
   getLabelById(id: number): Observable<Label> {
     return this.http.get<Label>(this._url + 'labels/' + id).pipe(
       tap((response) => this.log(response)),

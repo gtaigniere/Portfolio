@@ -11,7 +11,6 @@ export class SnippetListComponent implements OnInit {
 
   @Input()
   snippets: Snippet[] = [];
-  errMsg: string;
 
   @Output()
   snippetClicked: EventEmitter<string> = new EventEmitter<string>();

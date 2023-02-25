@@ -1,19 +1,25 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {addDoc, collection, collectionData, deleteDoc, doc, docData, Firestore, setDoc} from "@angular/fire/firestore";
 
 import {Category} from "../models/category";
+import {AngularFireDatabase} from "@angular/fire/compat/database";
 
 @Injectable() // Service injecté au niveau du module "Portfolio"
 export class CategoryService {
-  private _url: string = "http://localhost:3000/";
-  
+
   constructor(
-    private firestore: Firestore,
-    private http: HttpClient
+    private db: AngularFireDatabase
   ) { }
 
+  getCategories(): Observable<Category[]> {
+    return this.db.list('categories').valueChanges() as Observable<Category[]>;
+  }
+
+  getCategoryById(id: string): Observable<Category> {
+    return this.db.object<Category>(`categories/${id}`).valueChanges() as Observable<Category>;
+  }
+
+  /*
   getCategories(): Observable<Category[]> {
     const categoriesRef = collection(this.firestore, 'categories');
     return collectionData(categoriesRef, {idField: 'id'}) as Observable<Category[]>;
@@ -40,7 +46,6 @@ export class CategoryService {
     return deleteDoc(categoryRef);
   }
 
-  /*
   getCategories(): Observable<Category[]> {
     return this.http.get<Category[]>(this._url + 'categories').pipe(
       tap((response) => this.log(response)),

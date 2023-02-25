@@ -4,7 +4,7 @@ export interface Snippet {
     id: string;
     title: string;
     creator?: string;
-    date?: Date;
+    date?: string;
     code: string;
     comment?: string;
     file?: string;

@@ -1,26 +1,66 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {addDoc, collection, collectionData, deleteDoc, doc, docData, Firestore, setDoc} from "@angular/fire/firestore";
 
 import {Creation} from '../models/creation';
+import {AngularFireDatabase} from "@angular/fire/compat/database";
 
 @Injectable() // Service injecté au niveau du module "Portfolio"
 export class CreationService {
-  private _url: string = "http://localhost:3000/";
-  
+
   constructor(
-    private firestore: Firestore,
-    private http: HttpClient
+    private db: AngularFireDatabase
   ) { }
 
+  getCreations(): Observable<Creation[]> {
+    return this.db.list('creations').valueChanges() as Observable<Creation[]>;
+  }
+
+  getCreationById(id: string): Observable<Creation> {
+    return this.db.object<Creation>(`creations/${id}`).valueChanges() as Observable<Creation>;
+  }
+
+  addCreation(creation: Creation) {
+    this.db.object('creations').set({
+      title: '',
+      description: '',
+      year: 2000,
+      picture: '',
+      categories: [
+        {name: ''}
+      ],
+      languagesAndTools: [
+        {name: ''}
+      ]
+    });
+  }
+
+  updCreation(creation: Creation) {
+    this.db.object('creations').update({
+      title: '',
+      description: '',
+      year: 2000,
+      picture: '',
+      categories: [
+        {name: ''}
+      ],
+      languagesAndTools: [
+        {name: ''}
+      ]
+    });
+  }
+
+  delCreation(creation: Creation) {
+    this.db.object('creations').remove();
+  }
+
+  /*
   getCreations(): Observable<Creation[]> {
     const creationRef = collection(this.firestore, 'creations');
     return collectionData(creationRef, {idField: 'id'}) as Observable<Creation[]>;
   }
 
   getCreationById(id: string): Observable<Creation> {
-    const creationRef = doc(this.firestore, `creations/${id}`);
+    const creationRef = doc(this.db, `creations/${id}`);
     return docData(creationRef, {idField: 'id'}) as Observable<Creation>;
   }
 
@@ -47,6 +87,7 @@ export class CreationService {
   getCreationsByLanguageAndTool() {
 
   }
+  */
 
   /*
   getCreations(): Observable<Creation[]> {

@@ -8,5 +8,5 @@ export interface Creation {
   year?: number;
   picture?: string;
   categories?: Category[];
-  languages_tools?: LanguageAndTool[];
+  languagesAndTools?: LanguageAndTool[];
 }

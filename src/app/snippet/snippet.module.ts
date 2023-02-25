@@ -15,6 +15,8 @@ import {SnippetDetailComponent} from './components/snippet-detail/snippet-detail
 import {SnippetCardComponent} from './components/snippet-card/snippet-card.component';
 import {SnippetLabelComponent} from './components/snippet-label/snippet-label.component';
 import {SnippetComponent} from "./pages/snippet/snippet.component";
+import {SnippetsResolver} from "./resolvers/snippets.resolver";
+import {LabelsResolver} from "./resolvers/labels.resolver";
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import {SnippetComponent} from "./pages/snippet/snippet.component";
   ],
   providers: [
     SnippetService,
-    LabelService
+    LabelService,
+    SnippetsResolver,
+    LabelsResolver
   ]
 })
 export class SnippetModule { }

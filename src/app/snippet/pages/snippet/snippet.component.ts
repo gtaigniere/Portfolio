@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Snippet} from "../../models/snippet";
-import {SnippetService} from "../../services/snippet.service";
+import {Label} from "../../models/label";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-snippet',
@@ -11,32 +12,32 @@ export class SnippetComponent implements OnInit {
 
   title: string = 'Snippets';
   snippets: Snippet[] = [];
+  labels: Label[] = [];
   activeSnippet?: Snippet;
   receivedId?: string;
 
   constructor(
-    private snippetService: SnippetService
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    this.displaySnippetsList();
+    this.snippets = this.activatedRoute.snapshot.data['snippets'];
+    this.labels = this.activatedRoute.snapshot.data['labels'];
+
     if (this.receivedId) {
       this.displaySnippetDetails(this.receivedId);
     } else {
-      let snippets2 = this.snippets;
-      this.activeSnippet = snippets2.pop();
+      this.activeSnippet = this.snippets[this.snippets.length - 1];
     }
   }
 
-  displaySnippetsList() {
-    this.snippetService.getSnippets().subscribe(
-      snippets => this.snippets = snippets
-    );
-  }
-
   displaySnippetDetails(receivedId: string) {
-    this.snippetService.getSnippetById(receivedId).subscribe(
-      activeSnippet => this.activeSnippet = activeSnippet
+    this.snippets.map(
+      snippet => {
+        if (snippet.id === receivedId) {
+          this.activeSnippet = snippet;
+        }
+      }
     );
   }
 

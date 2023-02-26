@@ -1,3 +1,4 @@
+<script src="../../models/label-view.ts"></script>
 <script src="../../../../../../moviedb/src/app/movie/components/movie-detail/movie-detail.component.ts"></script>
 <div class="filter-menu">
 
@@ -32,7 +33,7 @@
     <div class="filter-section">
       <div class="section-header">
         <span>Labels</span>
-        <span class="add"><i class="material-icons">add_circle_outline</i></span>
+        <span class="add"><a (click)="goToLabelAdd()"><i class="material-icons">add_circle_outline</i></a></span>
       </div>
 
       <ul id="section-body">

@@ -21,7 +21,7 @@ export class SnippetFilterComponent implements OnInit {
   total = 0;
   favorites = 0;
   unlabeled = 0;
-  snippetNumberByLabel: number[];
+  labelsMap = new Map();
 
   constructor(
     private router: Router
@@ -29,21 +29,27 @@ export class SnippetFilterComponent implements OnInit {
 
   ngOnInit() {
     this.total = this.snippets.length;
-    for (let snippet of this.snippets) {
-      if (snippet.labels !== undefined) {
-        for (let label of snippet.labels) {
-          if (snippet.favorites) {
-            this.favorites++;
-          }
-          // A faire : nombre de snippet ayant tel label, pour chaque label
-        }
-      } else {
+    this.snippets.forEach(snippet => {
+      if (snippet.favorites) {
+        this.favorites++;
+      }
+      if (snippet.labels === undefined) {
         this.unlabeled++;
       }
-    }
+      // A faire : nombre de snippet ayant tel label, pour chaque label
+
+    });
   }
 
-  public goToSnippetAdd = () => {
-    this.router.navigate(['/snippet/add']);
+  isInLabelsMap(label: Label): boolean {
+    return this.labelsMap.has(label);
+  }
+
+  goToSnippetAdd = () => {
+    this.router.navigate(['/snippets/add']);
+  }
+
+  goToLabelAdd() {
+    this.router.navigate(['/labels/add']);
   }
 }

@@ -29,20 +29,18 @@ export class SnippetFilterComponent implements OnInit {
 
   ngOnInit() {
     this.total = this.snippets.length;
-    for(let label of this.labels) {
-      for(let snippet of this.snippets) {
-        if (snippet.favorites) {
-          this.favorites++;
+    for (let snippet of this.snippets) {
+      if (snippet.labels !== undefined) {
+        for (let label of snippet.labels) {
+          if (snippet.favorites) {
+            this.favorites++;
+          }
+          // A faire : nombre de snippet ayant tel label, pour chaque label
         }
-        if (snippet.labels?.length == 0) {
-          this.unlabeled++;
-        } else if (snippet.labels?.includes(label)) {
-          // this.snippetNumberByLabel[snippet.id]++;
-        }
+      } else {
+        this.unlabeled++;
       }
     }
-    console.log(this.snippetNumberByLabel);
-
   }
 
   public goToSnippetAdd = () => {

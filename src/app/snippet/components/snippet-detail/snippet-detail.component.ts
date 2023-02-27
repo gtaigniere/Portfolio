@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Snippet} from 'src/app/snippet/models/snippet';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-snippet-detail',
@@ -12,9 +13,22 @@ export class SnippetDetailComponent implements OnInit {
   snippet?: Snippet;
 
   constructor(
+    private router: Router
   ) {}
 
   ngOnInit() {
+  }
+
+  addDelFavoris() {
+    console.log("Ajoute ou retire la propriété favoris au snippet");
+  }
+
+  goToUpdSnippet() {
+    this.router.navigate(['/snippets/upd']);
+  }
+
+  goToDelSnippetLabel() {
+    this.router.navigate(['/snippets/del']);
   }
 
 }

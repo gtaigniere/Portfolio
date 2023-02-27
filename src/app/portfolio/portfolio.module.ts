@@ -10,6 +10,7 @@ import {CreationService} from 'src/app/portfolio/services/creation.service';
 
 import {CreationListComponent} from './pages/creation-list/creation-list.component';
 import {CreationDetailComponent} from './pages/creation-detail/creation-detail.component';
+import {CreationsResolver} from "./resolvers/creations.resolver";
 import {CreationResolver} from "./resolvers/creation.resolver";
 
 @NgModule({
@@ -30,6 +31,7 @@ import {CreationResolver} from "./resolvers/creation.resolver";
     CreationService,
     CategoryService,
     LanguageAndToolService,
+    CreationsResolver,
     CreationResolver
   ]
 })

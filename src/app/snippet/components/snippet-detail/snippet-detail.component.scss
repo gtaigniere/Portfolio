@@ -12,7 +12,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 5px 4px;
+  padding: 5px 9px 5px 4px;
   border-bottom: 1px solid gainsboro;
   width: 100%;
 }
@@ -29,14 +29,20 @@
   padding-top: 5px;
   color: darkgray;
 
-  i {
-    font-size: 1.3em;
+  a {
+    color: gray;
+    cursor: pointer;
+
+    i {
+      font-size: 1.3em;
+    }
   }
 }
 
 h2 {
   flex: 1;
   padding-left: 10px;
+  padding-right: 10px;
   font-size: 1em;
   text-align: left;
 }
@@ -44,23 +50,33 @@ h2 {
 .edit, .delete {
   padding-top: 5px;
   padding-left: 4px;
-  padding-right: 4px;
   color: gray;
 
-  i {
-    font-size: 1.2em;
+  a {
+    color: gray;
+    cursor: pointer;
+
+    i {
+      font-size: 1.2em;
+    }
   }
+}
+
+.edit {
+  padding-right: 4px;
 }
 
 .section-creator-and-labels {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-right: 3px;
   width: 100%;
 }
 
 .creator-and-date {
   padding-left: 34px;
+  width: 180px;
   font-weight: bold;
   font-size: 0.8em;
   color: gray;
@@ -69,13 +85,13 @@ h2 {
 
 .labels {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   padding-left: 1px;
   padding-right: 1px;
-  width: 284px;
+  width: 308px;
   height: 44px;
-  overflow: hidden;
+  overflow-x: scroll;
 }
 
 .section-body {

@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {Label} from "../../models/label";
 
 @Component({
   selector: 'app-snippet-label',
@@ -8,7 +9,7 @@ import {Component, Input} from '@angular/core';
 export class SnippetLabelComponent {
 
   @Input()
-  label = {
+  label: Label = {
     id: '',
     name: '',
     color: ''

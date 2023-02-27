@@ -2,10 +2,10 @@
 
   <div class="section-header">
     <div class="section-title">
-      <span class="star"><i class="material-icons">star</i></span>
+      <span class="star"><a (click)="addDelFavoris()"><i class="material-icons">star</i></a></span>
       <h2>{{ snippet.title }}</h2>
-      <span class="edit"><i class="material-icons">edit</i></span>
-      <span class="delete"><i class="material-icons">delete</i></span>
+      <span class="edit"><a (click)="goToUpdSnippet()"><i class="material-icons">edit</i></a></span>
+      <span class="delete"><a (click)="goToDelSnippetLabel()"><i class="material-icons">delete</i></a></span>
     </div>
 
     <div class="section-creator-and-labels">
@@ -15,7 +15,7 @@
       </div>
 
       <div class="labels">
-<!--        <app-snippet-label class="snippet-label" *ngFor="let label of snippet.labels" [label]="label"></app-snippet-label>-->
+        <app-snippet-label class="snippet-label" *ngFor="let label of snippet.labels" [label]="label"></app-snippet-label>
       </div>
     </div>
   </div>

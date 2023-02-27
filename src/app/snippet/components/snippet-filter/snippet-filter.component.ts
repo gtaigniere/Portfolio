@@ -36,20 +36,30 @@ export class SnippetFilterComponent implements OnInit {
       if (snippet.labels === undefined) {
         this.unlabeled++;
       }
-      // A faire : nombre de snippet ayant tel label, pour chaque label
-
+      snippet.labels?.forEach(
+        label => {
+          if (this.labelsMap.has(label.name)) {
+            let snippetNumber = this.labelsMap.get(label.name)
+            this.labelsMap.set(label.name, snippetNumber + 1);
+          } else {
+            this.labelsMap.set(label.name, 1);
+          }
+        }
+      );
     });
-  }
-
-  isInLabelsMap(label: Label): boolean {
-    return this.labelsMap.has(label);
+    for (let i = this.labels.length - 1; i == 0; i--) {
+      if (!this.labelsMap.has(this.labels[i].name)) {
+        this.labels.splice(i);
+      }
+    }
   }
 
   goToSnippetAdd = () => {
     this.router.navigate(['/snippets/add']);
   }
 
-  goToLabelAdd() {
+  goToAddLabel() {
     this.router.navigate(['/labels/add']);
   }
 }
+

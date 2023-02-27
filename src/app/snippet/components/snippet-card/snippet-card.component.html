@@ -4,9 +4,9 @@
 
   <p class="comment">{{ snippet.comment }} </p>
 
-  <div class="labels">
+  <div class="labels" *ngIf="snippet.labels !== undefined">
 
-<!--    <app-snippet-label class="snippet-label" *ngFor="let label of snippet.labels" [label]="label"></app-snippet-label>-->
+    <app-snippet-label class="snippet-label" *ngFor="let label of snippet.labels" [label]="label"></app-snippet-label>
 
   </div>
 

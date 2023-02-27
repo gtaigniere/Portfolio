@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
-import {CreationService} from 'src/app/portfolio/services/creation.service';
 import {Creation} from 'src/app/portfolio/models/creation';
 
 @Component({
@@ -17,18 +16,16 @@ export class CreationListComponent implements OnInit {
   creations: Creation[];
 
   constructor(
-    private creationService: CreationService,
+    private activatedRoute: ActivatedRoute,
     private router: Router
   ) {}
 
   ngOnInit() {
-    this.creationService.getCreations().subscribe(
-      creations => this.creations = creations
-    );
+    this.creations = this.activatedRoute.snapshot.data['creations'];
   }
 
   goToCreation(id: string) {
-    this.router.navigate(['/portfolio/creations', id]);
+    this.router.navigate(['/portfolio/creations', (+id - 1).toString()]);
   }
 
 }

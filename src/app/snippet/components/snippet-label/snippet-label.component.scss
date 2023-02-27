@@ -2,9 +2,9 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 3px;
-  margin-right: 3px;
-  width: 88px;
+  margin-left: 4px;
+  margin-right: 4px;
+  width: 92px;
   height: 26px;
   background-color: whitesmoke;
   border: 1px solid gray;
@@ -15,10 +15,11 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  padding-right: 4px;
   height: 100%;
   width: 100%;
   border-left: 6px solid;
-  border-radius: 2px;
+  border-radius: 3px;
   font-family: Poppins, sans-serif;
   font-weight: 600;
   font-size: 0.7em;

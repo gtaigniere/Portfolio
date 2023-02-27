@@ -33,13 +33,13 @@
     <div class="filter-section">
       <div class="section-header">
         <span>Labels</span>
-        <span class="add"><a (click)="goToLabelAdd()"><i class="material-icons">add_circle_outline</i></a></span>
+        <span class="add"><a (click)="goToAddLabel()"><i class="material-icons">add_circle_outline</i></a></span>
       </div>
 
       <ul id="section-body">
         <li [style]="'--label-color:' + label.color" class="label" *ngFor="let label of labels">
           <span class="label-text">{{ label.name }}</span>
-<!--          <span class="label-number">{{ labelNumber }}</span>-->
+          <span class="label-number">{{ labelsMap.get(label.name) }}</span>
         </li>
       </ul>
     </div>

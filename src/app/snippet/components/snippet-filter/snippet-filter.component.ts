@@ -52,18 +52,34 @@ export class SnippetFilterComponent implements OnInit {
         }
       });
     });
-    // On effectue un tri du tableau de Labels créé ci-dessus
-    this.usedBySnippets.sort((labelA, labelB) => this.compare(labelA, labelB));
+    // On effectue un tri alphabétique, du tableau créé ci-dessus, par nom
+    this.usedBySnippets.sort(
+      (labelA, labelB) => this.compareStrings(labelA.name, labelB.name)
+    );
+    // On effectue un tri du tableau créé ci-dessus, par nombre d'utilisations dans les Snippets
+    this.usedBySnippets.sort(
+      (labelA, labelB) => this.compareByNbUseInSnippets(labelA, labelB)
+    );
+  }
+
+  /**
+   * Cette fonction compare deux chaînes de caractères
+   * @param a string
+   * @param b string
+   * @return number
+   */
+  compareStrings(a: string, b: string): number {
+    return a.localeCompare(b);
   }
 
   /**
    * Cette fonction compare deux Labels en fonction
-   *  de leur nombre d'utilisations dans les snippets.
+   *  de leur nombre d'utilisations dans les Snippets.
    * @param labelA Label
    * @param labelB Label
    * @return number
    */
-  compare(labelA: Label, labelB: Label): number {
+  compareByNbUseInSnippets(labelA: Label, labelB: Label): number {
     let nb1 = this.labelsUsedBySnippets.get(labelA.name);
     let nb2 = this.labelsUsedBySnippets.get(labelB.name);
     if (nb1 === undefined) {

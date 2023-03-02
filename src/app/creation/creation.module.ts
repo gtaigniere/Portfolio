@@ -1,12 +1,12 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
-import {PortfolioRoutingModule} from './portfolio-routing.module';
+import {CreationRoutingModule} from './creation-routing.module';
 import {SharedModule} from '../shared/shared.module';
 
 import {LanguageAndToolService} from './services/languageAndTool.service';
 import {CategoryService} from './services/category.service';
-import {CreationService} from 'src/app/portfolio/services/creation.service';
+import {CreationService} from 'src/app/creation/services/creation.service';
 
 import {CreationListComponent} from './pages/creation-list/creation-list.component';
 import {CreationDetailComponent} from './pages/creation-detail/creation-detail.component';
@@ -24,7 +24,7 @@ import {CreationResolver} from "./resolvers/creation.resolver";
   ],
   imports: [
     CommonModule,
-    PortfolioRoutingModule,
+    CreationRoutingModule,
     SharedModule
   ],
   providers: [
@@ -35,4 +35,4 @@ import {CreationResolver} from "./resolvers/creation.resolver";
     CreationResolver
   ]
 })
-export class PortfolioModule { }
+export class CreationModule { }

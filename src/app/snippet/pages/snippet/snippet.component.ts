@@ -14,7 +14,7 @@ export class SnippetComponent implements OnInit {
   snippets: Snippet[] = [];
   labels: Label[] = [];
   activeSnippet?: Snippet;
-  receivedId?: string;
+  received?: Snippet;
 
   constructor(
     private activatedRoute: ActivatedRoute
@@ -24,26 +24,19 @@ export class SnippetComponent implements OnInit {
     this.snippets = this.activatedRoute.snapshot.data['snippets'];
     this.labels = this.activatedRoute.snapshot.data['labels'];
 
-    if (this.receivedId) {
-      this.displaySnippetDetails(this.receivedId);
+    if (this.received) {
+      this.displaySnippetDetails(this.received);
     } else {
       this.activeSnippet = this.snippets[this.snippets.length - 1];
     }
   }
 
-  displaySnippetDetails(receivedId: string) {
-    this.snippets.map(
-      snippet => {
-        if (snippet.id === receivedId) {
-          this.activeSnippet = snippet;
-        }
-      }
-    );
+  displaySnippetDetails(received: Snippet) {
+    this.activeSnippet = received;
   }
 
-  receivedSnippetId(id: string) {
-    this.receivedId = id;
-    this.displaySnippetDetails(this.receivedId);
+  receiptSnippet(snippet: Snippet) {
+    this.displaySnippetDetails(snippet);
   }
 
 }

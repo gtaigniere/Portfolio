@@ -80,21 +80,9 @@ export class SnippetFilterComponent implements OnInit {
    * @return number
    */
   compareByNbUseInSnippets(labelA: Label, labelB: Label): number {
-    let nb1 = this.labelsUsedBySnippets.get(labelA.name);
-    let nb2 = this.labelsUsedBySnippets.get(labelB.name);
-    if (nb1 === undefined) {
-      nb1 = 0;
-    }
-    if (nb2 === undefined) {
-      nb2 = 0;
-    }
-    if (nb1 < nb2) {
-      return 1;
-    }
-    if (nb1 > nb2) {
-      return -1;
-    }
-    return 0;
+    const nb1 = this.labelsUsedBySnippets.get(labelA.name) ?? 0;
+    const nb2 = this.labelsUsedBySnippets.get(labelB.name) ?? 0;
+    return nb2 - nb1;
   }
 
   goToSnippetAdd = () => {

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 
-import {Creation} from 'src/app/portfolio/models/creation';
+import {Creation} from 'src/app/creation/models/creation';
 
 @Component({
   selector: 'app-creation-list',

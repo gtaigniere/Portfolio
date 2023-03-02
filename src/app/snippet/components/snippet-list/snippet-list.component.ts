@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 import {Snippet} from '../../models/snippet';
 
@@ -7,22 +7,16 @@ import {Snippet} from '../../models/snippet';
   templateUrl: 'snippet-list.component.html',
   styleUrls: ['snippet-list.component.scss']
 })
-export class SnippetListComponent implements OnInit {
+export class SnippetListComponent {
 
   @Input()
   snippets: Snippet[] = [];
 
   @Output()
-  snippetClicked: EventEmitter<string> = new EventEmitter<string>();
+  snippetClicked: EventEmitter<Snippet> = new EventEmitter<Snippet>();
 
-  constructor(
-  ) {}
-
-  ngOnInit() {
-  }
-
-  sendSnippetId(id: string) {
-    this.snippetClicked.emit(id);
+  sendSnippet(snippet: Snippet) {
+    this.snippetClicked.emit(snippet);
   }
 
 }

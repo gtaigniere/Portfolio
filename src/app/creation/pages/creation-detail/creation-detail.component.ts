@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 
-import {Creation} from 'src/app/portfolio/models/creation';
-import {CreationView} from 'src/app/portfolio/models/creation-view';
+import {Creation} from 'src/app/creation/models/creation';
+import {CreationView} from 'src/app/creation/models/creation-view';
 
 @Component({
   selector: 'app-creation-detail',
@@ -11,7 +11,7 @@ import {CreationView} from 'src/app/portfolio/models/creation-view';
 })
 export class CreationDetailComponent implements OnInit {
 
-  readonly PICTURE_URL = '../../assets/imgs/creations/';
+  readonly PICTURE_BASE_PATH = '../../assets/imgs/creations/';
   creation: Creation;
   creationView: CreationView;
 

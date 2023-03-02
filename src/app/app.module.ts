@@ -10,7 +10,7 @@ import {PartialsModule} from './partials/partials.module';
 
 import {SharedModule} from './shared/shared.module';
 import {WelcomeModule} from './welcome/welcome.module';
-import {PortfolioModule} from './portfolio/portfolio.module';
+import {CreationModule} from './creation/creation.module';
 import {SnippetModule} from './snippet/snippet.module';
 import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
@@ -27,7 +27,7 @@ import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
     HttpClientModule,
     PartialsModule,
     WelcomeModule,
-    PortfolioModule,
+    CreationModule,
     SnippetModule,
     SharedModule
   ],

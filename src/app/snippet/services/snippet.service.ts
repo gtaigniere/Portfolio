@@ -13,6 +13,8 @@ export class SnippetService {
 
   getSnippets(): Observable<Snippet[]> {
     return this.db.list('snippets').valueChanges() as Observable<Snippet[]>;
+    // return this.db.list('snippets', query => query.orderByChild('title')).valueChanges() as Observable<Snippet[]>;
+    // return this.db.list('snippets', query => query.orderByChild('title').equalTo('Debugage')).valueChanges() as Observable<Snippet[]>;
   }
 
   getSnippetById(id: string): Observable<Snippet> {

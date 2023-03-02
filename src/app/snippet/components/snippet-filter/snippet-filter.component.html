@@ -37,9 +37,9 @@
       </div>
 
       <ul id="section-body">
-        <li [style]="'--label-color:' + label.color" class="label" *ngFor="let label of labels">
+        <li [style]="'--label-color:' + label.color" class="label" *ngFor="let label of usedBySnippets">
           <span class="label-text">{{ label.name }}</span>
-          <span class="label-number">{{ labelsMap.get(label.name) }}</span>
+          <span class="label-number">{{ labelsUsedBySnippets.get(label.name) }}</span>
         </li>
       </ul>
     </div>

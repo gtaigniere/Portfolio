@@ -21,11 +21,13 @@ export class SnippetFilterComponent implements OnInit {
   total = 0;
   favorites = 0;
   unlabeled = 0;
-  labelsMap = new Map();
+  labelsUsedBySnippets = new Map<string, number | undefined>();
+  usedBySnippets: Label[] = [];
 
   constructor(
     private router: Router
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
     this.total = this.snippets.length;
@@ -36,22 +38,47 @@ export class SnippetFilterComponent implements OnInit {
       if (snippet.labels === undefined) {
         this.unlabeled++;
       }
-      snippet.labels?.forEach(
-        label => {
-          if (this.labelsMap.has(label.name)) {
-            let snippetNumber = this.labelsMap.get(label.name)
-            this.labelsMap.set(label.name, snippetNumber + 1);
-          } else {
-            this.labelsMap.set(label.name, 1);
-          }
+      /* On compte le nombre d'utilisations de chaque Label dans les snippets
+        et on met ensuite dans un tableau seulement ceux qui sont utilisés. */
+      snippet.labels?.forEach(label => {
+        let nbUseInSnippets = this.labelsUsedBySnippets.get(label.name);
+        if (nbUseInSnippets !== undefined) {
+          this.labelsUsedBySnippets.set(label.name, nbUseInSnippets + 1);
+        } else {
+          this.labelsUsedBySnippets.set(label.name, 1);
         }
-      );
+        if (!this.usedBySnippets.find(lab => lab.name === label.name)) {
+          this.usedBySnippets.push(label);
+        }
+      });
     });
-    for (let i = this.labels.length - 1; i == 0; i--) {
-      if (!this.labelsMap.has(this.labels[i].name)) {
-        this.labels.splice(i);
-      }
+    // On effectue un tri du tableau de Labels créé ci-dessus
+    this.usedBySnippets.sort((labelA, labelB) => this.compare(labelA, labelB));
+  }
+
+  /**
+   * Cette fonction compare deux Labels en fonction
+   *  de leur nombre d'utilisations dans les snippets.
+   * @param labelA Label
+   * @param labelB Label
+   * @return number
+   */
+  compare(labelA: Label, labelB: Label): number {
+    let nb1 = this.labelsUsedBySnippets.get(labelA.name);
+    let nb2 = this.labelsUsedBySnippets.get(labelB.name);
+    if (nb1 === undefined) {
+      nb1 = 0;
     }
+    if (nb2 === undefined) {
+      nb2 = 0;
+    }
+    if (nb1 < nb2) {
+      return 1;
+    }
+    if (nb1 > nb2) {
+      return -1;
+    }
+    return 0;
   }
 
   goToSnippetAdd = () => {
@@ -62,4 +89,3 @@ export class SnippetFilterComponent implements OnInit {
     this.router.navigate(['/labels/add']);
   }
 }
-

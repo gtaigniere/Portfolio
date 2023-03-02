@@ -1,0 +1,125 @@
+.filter-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 19px 0 12px;
+  width: 220px;
+  background-color: var(--anthracite);
+  border-top-left-radius: 5px;
+  font-family: Poppins, sans-serif;
+  font-size: 0.9em;
+  color: white;
+}
+
+.filter-header {
+  padding-bottom: 8px;
+}
+
+h2 {
+  padding-bottom: 18px;
+  font-weight: bold;
+  font-size: 1.1em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.filter-body, .filter-section, .section-body, .menu {
+  width: 100%;
+}
+
+.filter-body {
+  padding: 8px 5px 0;
+  border-top: 1px solid darkgray;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+}
+
+.filter-section {
+  padding-left: 6px;
+  padding-right: 7px;
+}
+
+.section-body {
+  --label-color: white;
+}
+
+.label-number {
+  padding-right: 2px;
+  //color: darkgray;
+  color: white;
+}
+
+.filter-section:nth-child(2) {
+  max-height: 236px;
+}
+
+.section-header {
+  padding-top: 32px;
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    padding-bottom: 3px;
+    position: relative;
+    font-weight: 600;
+    color: darkgray;
+    text-transform: uppercase;
+  }
+}
+
+.add {
+  left: 4px;
+
+  a {
+    color: darkgray;
+    cursor: pointer;
+  }
+}
+
+.menu, #section-body {
+  position: relative;
+}
+
+.menu li, #section-body li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.label-text {
+  padding-left: 5px;
+  flex: 1;
+}
+
+.show-all:before {
+  padding-top: 2px;
+  content: 'format_list_bulleted';
+  font-family: 'Material Icons', sans-serif;
+  font-size: 1.1em;
+}
+
+.favoris:before {
+  padding-top: 1px;
+  content: 'star';
+  font-family: 'Material Icons', sans-serif;
+  font-size: 1.1em;
+}
+
+.unlabeled:before {
+  padding-top: 2px;
+  content: 'label';
+  font-family: 'Material Icons', sans-serif;
+  font-size: 1.1em;
+}
+
+.label:before {
+  padding-top: 2px;
+  content: 'fiber_manual_record';
+  font-family: 'Material Icons', sans-serif;
+  color: var(--label-color);
+}

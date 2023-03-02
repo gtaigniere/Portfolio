@@ -1,0 +1,39 @@
+<section>
+
+  <div class="creation-detail" *ngIf="creationView; else noCreation">
+    <h2>{{ creationView.title }}</h2>
+
+    <div class="section-body">
+      <div>
+        <img src="{{ PICTURE_BASE_PATH + creationView.picture }}" alt="{{ creationView.picture }}">
+      </div>
+
+      <div class="creation-texts">
+        <p class="description">{{ creationView.description }}</p>
+
+        <div class="creation-categories-year-languagesAndTools">
+          <p class="creation-categories">
+            <span class="italic-bold">Type(s)&nbsp;:&nbsp;</span>
+            <span>{{ creationView.categories }}</span>
+          </p>
+
+          <p class="creation-year"><span class="italic-bold">Année :&nbsp;</span>{{ creationView.year }}</p>
+
+          <p class="creation-languagesAndTools">
+            <span class="italic-bold">Avec&nbsp;:&nbsp;</span>
+            <span>{{ creationView.languagesAndTools }}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <ng-template #noCreation>
+    <p>Aucune création à afficher</p>
+  </ng-template>
+
+  <div class="special-button">
+    <app-special-gradient-button class="special-btn" [callback]="goToPortfolio" [background]="buttonBackground" [text]="buttonText"></app-special-gradient-button>
+  </div>
+
+</section>

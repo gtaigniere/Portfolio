@@ -1,0 +1,47 @@
+<script src="../../models/label-view.ts"></script>
+<script src="../../../../../../moviedb/src/app/movie/components/movie-detail/movie-detail.component.ts"></script>
+<div class="filter-menu">
+
+  <div class="filter-header">
+    <h2>Filtres</h2>
+
+    <app-special-gradient-button class="special-btn" [callback]="goToSnippetAdd" [background]="buttonBackground" [text]="buttonText"></app-special-gradient-button>
+  </div>
+
+  <div class="filter-body">
+
+    <div class="filter-section">
+      <div class="section-body">
+
+        <ul class="menu">
+          <li class="show-all">
+            <span class="label-text">Tous les Snippets</span>
+            <span class="label-number">{{ total }}</span>
+          </li>
+          <li class="favoris">
+            <span class="label-text">Favoris</span>
+            <span class="label-number">{{ favorites }}</span>
+          </li>
+          <li class="unlabeled">
+            <span class="label-text">Sans étiquettes</span>
+            <span class="label-number">{{ unlabeled }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="filter-section">
+      <div class="section-header">
+        <span>Labels</span>
+        <span class="add"><a (click)="goToAddLabel()"><i class="material-icons">add_circle_outline</i></a></span>
+      </div>
+
+      <ul id="section-body">
+        <li [style]="'--label-color:' + label.color" class="label" *ngFor="let label of usedBySnippets">
+          <span class="label-text">{{ label.name }}</span>
+          <span class="label-number">{{ labelsUsedBySnippets.get(label.name) }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="snippets">
+  <h1>{{ title }}</h1>
+
+  <div class="section-main">
+    <app-snippet-filter class="section-filters" [snippets]="snippets"
+                        [labels]="labels"></app-snippet-filter>
+
+    <div class="section-snippets">
+      <header class="snippets-header">
+        <app-snippet-sort class="snippet-sort"></app-snippet-sort>
+
+        <app-snippet-search class="snippet-search"></app-snippet-search>
+      </header>
+
+      <section class="snippets-body">
+        <app-snippet-list class="snippet-list" (snippetClicked)="receiptSnippet($event)"
+                        [snippets]="snippets"></app-snippet-list>
+
+        <app-snippet-detail class="snippet-detail" [snippet]="activeSnippet"></app-snippet-detail>
+      </section>
+    </div>
+  </div>
+</div>

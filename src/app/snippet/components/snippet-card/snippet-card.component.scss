@@ -1,0 +1,34 @@
+.section-snippet-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+h3 {
+  padding-top: 4px;
+  padding-bottom: 7px;
+  font-size: 0.95em;
+  color: dimgray;
+}
+
+.comment {
+  width: 100%;
+  height: 44px;
+  font-size: 0.85em;
+  color: gray;
+  letter-spacing: -0.2px;
+  overflow: hidden;
+}
+
+.labels {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 1px;
+  padding-right: 1px;
+  width: 308px;
+  height: 44px;
+  overflow-x: scroll;
+}

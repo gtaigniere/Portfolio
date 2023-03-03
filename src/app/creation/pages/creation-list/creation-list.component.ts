@@ -25,7 +25,7 @@ export class CreationListComponent implements OnInit {
   }
 
   goToCreation(id: string) {
-    this.router.navigate(['/portfolio/creations', (+id - 1).toString()]);
+    this.router.navigate(['/creations', (+id - 1).toString()]);
   }
 
 }

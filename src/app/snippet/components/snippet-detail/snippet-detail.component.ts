@@ -19,7 +19,7 @@ export class SnippetDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.snippetContextService.snippetSubjectToObservable$.subscribe(
+    this.snippetContextService.selectedSnippet$.subscribe(
       snippet => this.snippet = snippet
     );
   }

@@ -13,7 +13,7 @@ export class SnippetContextService {
     this.snippetSubject.next(snippet);
   }
 
-  get snippetSubjectToObservable$(): Observable<Snippet> {
+  get selectedSnippet$(): Observable<Snippet> {
     return this.snippetSubject.asObservable();
   }
 

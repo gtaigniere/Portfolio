@@ -9,13 +9,17 @@ import {SnippetDetailComponent} from "./components/snippet-detail/snippet-detail
 import {AddSnippetComponent} from "./components/add-snippet/add-snippet.component";
 
 const routes = [
-  { path: '', component: SnippetComponent, children: [
+  { path: '', component: SnippetComponent,
+    children: [
       { path: '', component: SnippetDetailComponent, outlet: 'right-side-snip' }
-    ], resolve: { snippets: SnippetsResolver, labels: LabelsResolver }
+    ],
+    resolve: { snippets: SnippetsResolver, labels: LabelsResolver }
   },
-  { path: 'add', component: SnippetComponent, children: [
+  { path: 'add', component: SnippetComponent,
+    children: [
       { path: '', component: AddSnippetComponent, outlet: 'right-side-snip' }
-    ], resolve: { snippets: SnippetsResolver, labels: LabelsResolver }
+    ],
+    resolve: { snippets: SnippetsResolver, labels: LabelsResolver }
   },
   { path: '**', redirectTo: '/home' }
 ];

@@ -16,7 +16,8 @@ const routes = [
   { path: 'add', component: SnippetComponent, children: [
       { path: '', component: AddSnippetComponent, outlet: 'right-side-snip' }
     ], resolve: { snippets: SnippetsResolver, labels: LabelsResolver }
-  }
+  },
+  { path: '**', redirectTo: '/home' }
 ];
 
 @NgModule({

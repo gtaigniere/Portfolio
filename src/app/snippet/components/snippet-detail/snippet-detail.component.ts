@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Snippet} from 'src/app/snippet/models/snippet';
 import {Router} from "@angular/router";
+import {SnippetContextService} from "../../services/snippet-context.service";
 
 @Component({
   selector: 'app-snippet-detail',
@@ -13,10 +14,14 @@ export class SnippetDetailComponent implements OnInit {
   snippet?: Snippet;
 
   constructor(
+    private snippetContextService: SnippetContextService,
     private router: Router
   ) {}
 
   ngOnInit() {
+    this.snippetContextService.snippetSubjectToObservable$.subscribe(
+      snippet => this.snippet = snippet
+    );
   }
 
   addDelFavoris() {

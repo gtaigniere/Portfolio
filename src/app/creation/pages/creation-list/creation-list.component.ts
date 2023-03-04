@@ -12,7 +12,7 @@ export class CreationListComponent implements OnInit {
 
   title: string = "Portfolio";
 
-  readonly PICTURE_URL: string = '../../assets/imgs/creations/';
+  readonly PICTURE_BASE_PATH: string = '../../assets/imgs/creations/';
   creations: Creation[];
 
   constructor(

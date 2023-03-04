@@ -89,7 +89,4 @@ export class SnippetFilterComponent implements OnInit {
     this.router.navigate(['/snippets/add']);
   }
 
-  navigateToAddLabel() {
-    this.router.navigate(['/labels/add-label']);
-  }
 }

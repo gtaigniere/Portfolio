@@ -24,6 +24,7 @@ export class SnippetComponent implements OnInit {
     this.snippets = this.activatedRoute.snapshot.data['snippets'];
     this.labels = this.activatedRoute.snapshot.data['labels'];
 
+    // C'était dans le cas où l'on ne passait pas par un second router-outlet
     if (this.received) {
       this.displaySnippetDetails(this.received);
     } else {
@@ -31,11 +32,13 @@ export class SnippetComponent implements OnInit {
     }
   }
 
+  // C'était dans le cas où l'on ne passait pas par un second router-outlet
   displaySnippetDetails(received: Snippet) {
     this.activeSnippet = received;
   }
 
   receiptSnippet(snippet: Snippet) {
+    // C'était dans le cas où l'on ne passait pas par un second router-outlet
     this.displaySnippetDetails(snippet);
   }
 

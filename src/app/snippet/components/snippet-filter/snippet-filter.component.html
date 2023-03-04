@@ -5,7 +5,7 @@
   <div class="filter-header">
     <h2>Filtres</h2>
 
-    <app-special-gradient-button class="special-btn" [callback]="goToAddSnippet" [background]="buttonBackground" [text]="buttonText"></app-special-gradient-button>
+    <app-special-gradient-button class="special-btn" [callback]="navigateToAddSnippet" [background]="buttonBackground" [text]="buttonText"></app-special-gradient-button>
   </div>
 
   <div class="filter-body">
@@ -33,7 +33,7 @@
     <div class="filter-section">
       <div class="section-header">
         <span>Labels</span>
-        <span class="add"><a (click)="goToAddLabel()"><i class="material-icons">add_circle_outline</i></a></span>
+        <span class="add"><a (click)="navigateToAddLabel()"><i class="material-icons">add_circle_outline</i></a></span>
       </div>
 
       <ul id="section-body">

@@ -37,7 +37,7 @@ export class CreationDetailComponent implements OnInit {
     }
   }
 
-  public goToCreations = () => {
+  public navigateToCreations = () => {
     this.router.navigate(['/creations']);
   }
 

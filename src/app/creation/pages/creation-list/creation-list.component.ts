@@ -24,7 +24,7 @@ export class CreationListComponent implements OnInit {
     this.creations = this.activatedRoute.snapshot.data['creations'];
   }
 
-  goToCreation(id: string) {
+  navigateToCreation(id: string) {
     this.router.navigate(['/creations', (+id - 1).toString()]);
   }
 

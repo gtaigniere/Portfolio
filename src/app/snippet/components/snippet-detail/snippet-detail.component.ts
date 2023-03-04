@@ -23,11 +23,11 @@ export class SnippetDetailComponent implements OnInit {
     console.log("Ajoute ou retire la propriété favoris au snippet");
   }
 
-  goToUpdSnippet() {
+  navigateToUpdSnippet() {
     this.router.navigate(['/snippets/upd']);
   }
 
-  goToDelSnippetLabel() {
+  navigateToDelSnippetLabel() {
     this.router.navigate(['/snippets/del']);
   }
 

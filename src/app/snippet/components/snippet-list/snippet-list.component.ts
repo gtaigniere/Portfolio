@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 import {Snippet} from '../../models/snippet';
 import {SnippetContextService} from "../../services/snippet-context.service";
@@ -8,22 +8,31 @@ import {SnippetContextService} from "../../services/snippet-context.service";
   templateUrl: 'snippet-list.component.html',
   styleUrls: ['snippet-list.component.scss']
 })
-export class SnippetListComponent {
+export class SnippetListComponent implements OnInit {
 
   @Input()
   snippets: Snippet[] = [];
 
-  // @Output()
-  // snippetClicked: EventEmitter<Snippet> = new EventEmitter<Snippet>();
+  snippet?: Snippet|null;
 
   constructor(
     private snippetContextService: SnippetContextService
   ) {
   }
 
-  sendSnippet(snippet: Snippet) {
-    // this.snippetClicked.emit(snippet);
-    this.snippetContextService.sendSnippetSubject(snippet);
+  ngOnInit(): void {
+    this.snippetContextService.currentSnippet$.subscribe(
+      snippet => this.snippet = snippet
+    );
+    if (this.snippet) {
+      this.emitSnippet(this.snippet)
+    } else {
+      this.emitSnippet(this.snippets[this.snippets.length - 1]);
+    }
+  }
+
+  emitSnippet(snippet: Snippet) {
+    this.snippetContextService.currentSnippet = snippet;
   }
 
 }

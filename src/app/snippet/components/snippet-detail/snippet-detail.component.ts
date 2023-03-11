@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Snippet} from 'src/app/snippet/models/snippet';
 import {Router} from "@angular/router";
 import {SnippetContextService} from "../../services/snippet-context.service";
@@ -10,8 +10,7 @@ import {SnippetContextService} from "../../services/snippet-context.service";
 })
 export class SnippetDetailComponent implements OnInit {
 
-  @Input()
-  snippet?: Snippet;
+  snippet: Snippet|null;
 
   constructor(
     private snippetContextService: SnippetContextService,
@@ -19,7 +18,7 @@ export class SnippetDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.snippetContextService.selectedSnippet$.subscribe(
+    this.snippetContextService.currentSnippet$.subscribe(
       snippet => this.snippet = snippet
     );
   }

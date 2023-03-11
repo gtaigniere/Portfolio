@@ -1,20 +1,21 @@
 import {Injectable} from '@angular/core';
-import {Observable, Subject} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import {Snippet} from "../models/snippet";
 
 @Injectable() // Service injecté au niveau du module "Snippet"
 export class SnippetContextService {
 
-  private snippetSubject = new Subject<Snippet>();
+  snippetBehavSub = new BehaviorSubject<Snippet|null>(null);
 
-  constructor() { }
+  constructor(
+  ) {}
 
-  set sendSnippetSubject(snippet: Snippet) {
-    this.snippetSubject.next(snippet);
+  set currentSnippet(snippet: Snippet) {
+    this.snippetBehavSub.next(snippet);
   }
 
-  get selectedSnippet$(): Observable<Snippet> {
-    return this.snippetSubject.asObservable();
+  get currentSnippet$(): Observable<Snippet|null> {
+    return this.snippetBehavSub.asObservable();
   }
 
 }

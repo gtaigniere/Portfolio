@@ -4,11 +4,15 @@
 
   <div class="section-body">
 
-    <div (click)="goToCreation(creation.id)" *ngFor="let creation of creations" class="card">
+    <ng-container *ngFor="let creation of creations">
 
-      <img src="{{ PICTURE_URL + creation.picture }}" alt="{{ creation.picture }}">
+      <a (click)="navigateToCreation(creation.id)" class="card">
 
-    </div>
+        <img src="{{ PICTURE_BASE_PATH + creation.picture }}" alt="{{ creation.picture }}">
+
+      </a>
+
+    </ng-container>
 
   </div>
 

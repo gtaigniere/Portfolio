@@ -5,18 +5,19 @@ import {RouterModule} from '@angular/router';
 import {WelcomeComponent} from './welcome.component';
 
 const routes = [
-  { path: '', component: WelcomeComponent }
+  { path: '', component: WelcomeComponent },
+  { path: '**', component: WelcomeComponent }
 ];
 
 @NgModule({
   declarations: [
   ],
-  exports: [
-    RouterModule
-  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
+  ],
+  exports: [
+    RouterModule
   ]
 })
 export class WelcomeRoutingModule { }

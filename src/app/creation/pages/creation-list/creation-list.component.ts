@@ -12,7 +12,7 @@ export class CreationListComponent implements OnInit {
 
   title: string = "Portfolio";
 
-  readonly PICTURE_URL: string = '../../assets/imgs/creations/';
+  readonly PICTURE_BASE_PATH: string = '../../assets/imgs/creations/';
   creations: Creation[];
 
   constructor(
@@ -24,8 +24,8 @@ export class CreationListComponent implements OnInit {
     this.creations = this.activatedRoute.snapshot.data['creations'];
   }
 
-  goToCreation(id: string) {
-    this.router.navigate(['/portfolio/creations', (+id - 1).toString()]);
+  navigateToCreation(id: string) {
+    this.router.navigate(['/creations', (+id - 1).toString()]);
   }
 
 }

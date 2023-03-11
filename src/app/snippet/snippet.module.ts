@@ -17,6 +17,8 @@ import {SnippetLabelComponent} from './components/snippet-label/snippet-label.co
 import {SnippetComponent} from "./pages/snippet/snippet.component";
 import {SnippetsResolver} from "./resolvers/snippets.resolver";
 import {LabelsResolver} from "./resolvers/labels.resolver";
+import {AddSnippetComponent} from './components/add-snippet/add-snippet.component';
+import {SnippetContextService} from "./services/snippet-context.service";
 
 @NgModule({
   declarations: [
@@ -27,10 +29,10 @@ import {LabelsResolver} from "./resolvers/labels.resolver";
     SnippetDetailComponent,
     SnippetCardComponent,
     SnippetLabelComponent,
-    SnippetComponent
+    SnippetComponent,
+    AddSnippetComponent
   ],
-  exports: [
-  ],
+  exports: [],
   imports: [
     CommonModule,
     SnippetRoutingModule,
@@ -40,7 +42,9 @@ import {LabelsResolver} from "./resolvers/labels.resolver";
     SnippetService,
     LabelService,
     SnippetsResolver,
-    LabelsResolver
+    LabelsResolver,
+    SnippetContextService
   ]
 })
-export class SnippetModule { }
+export class SnippetModule {
+}

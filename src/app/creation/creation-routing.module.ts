@@ -8,9 +8,8 @@ import {CreationsResolver} from "./resolvers/creations.resolver";
 import {CreationResolver} from "./resolvers/creation.resolver";
 
 const routes = [
-  { path: 'creations', component: CreationListComponent, resolve: { creations: CreationsResolver } },
-  { path: 'creations/:id', component: CreationDetailComponent, resolve: { creation: CreationResolver } },
-  { path: '', component: CreationListComponent }
+  { path: '', component: CreationListComponent, resolve: { creations: CreationsResolver } },
+  { path: ':id', component: CreationDetailComponent, resolve: { creation: CreationResolver } }
 ];
 
 @NgModule({

@@ -32,7 +32,8 @@ import {SnippetContextService} from "./services/snippet-context.service";
     SnippetComponent,
     AddSnippetComponent
   ],
-  exports: [],
+  exports: [
+  ],
   imports: [
     CommonModule,
     SnippetRoutingModule,

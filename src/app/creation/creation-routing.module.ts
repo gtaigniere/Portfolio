@@ -8,13 +8,12 @@ import {CreationsResolver} from "./resolvers/creations.resolver";
 import {CreationResolver} from "./resolvers/creation.resolver";
 
 const routes = [
-  { path: '', component: CreationListComponent, resolve: { creations: CreationsResolver } },
-  { path: ':id', component: CreationDetailComponent, resolve: { creation: CreationResolver } }
+  {path: '', component: CreationListComponent, resolve: {creations: CreationsResolver}},
+  {path: ':id', component: CreationDetailComponent, resolve: {creation: CreationResolver}}
 ];
 
 @NgModule({
-  declarations: [
-  ],
+  declarations: [],
   exports: [
     RouterModule
   ],
@@ -23,4 +22,5 @@ const routes = [
     RouterModule.forChild(routes)
   ]
 })
-export class CreationRoutingModule { }
+export class CreationRoutingModule {
+}

@@ -5,13 +5,12 @@ import {RouterModule} from '@angular/router';
 import {WelcomeComponent} from './welcome.component';
 
 const routes = [
-  { path: '', component: WelcomeComponent },
-  { path: '**', component: WelcomeComponent }
+  {path: '', component: WelcomeComponent},
+  {path: '**', redirectTo: '/home'}
 ];
 
 @NgModule({
-  declarations: [
-  ],
+  declarations: [],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
@@ -20,4 +19,5 @@ const routes = [
     RouterModule
   ]
 })
-export class WelcomeRoutingModule { }
+export class WelcomeRoutingModule {
+}

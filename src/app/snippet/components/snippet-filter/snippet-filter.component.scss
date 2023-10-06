@@ -51,7 +51,10 @@ h2 {
 }
 
 .filter-section:nth-child(2) {
-  max-height: 236px;
+  //max-height: 200px; // 5 labels apparents
+  //max-height: 229px; // 6 labels apparents
+  //max-height: 288px; // 8 labels apparents
+  max-height: 348px; // 10 labels apparents
 }
 
 .section-header {

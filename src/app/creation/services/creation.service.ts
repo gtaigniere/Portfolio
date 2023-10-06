@@ -8,8 +8,9 @@ import {AngularFireDatabase} from "@angular/fire/compat/database";
 export class CreationService {
 
   constructor(
-    private db: AngularFireDatabase
-  ) { }
+      private db: AngularFireDatabase
+  ) {
+  }
 
   getCreations(): Observable<Creation[]> {
     return this.db.list('creations').valueChanges() as Observable<Creation[]>;
@@ -18,7 +19,7 @@ export class CreationService {
   getCreationById(id: string): Observable<Creation> {
     return this.db.object<Creation>(`creations/${id}`).valueChanges() as Observable<Creation>;
   }
-
+}
   addCreation(creation: Creation) {
     this.db.object('creations').set({
       title: '',
